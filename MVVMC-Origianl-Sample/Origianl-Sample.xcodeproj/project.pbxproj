@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147B6A0D23606E8F00BE494F /* TrainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B6A0C23606E8F00BE494F /* TrainDetailViewController.swift */; };
 		4512453923602733007BA5D9 /* trainData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4512453823602733007BA5D9 /* trainData.json */; };
 		45DC36DC2360077D0065D987 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC36DB2360077D0065D987 /* AppDelegate.swift */; };
-		45DC36E02360077D0065D987 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC36DF2360077D0065D987 /* ViewController.swift */; };
 		45DC36E32360077D0065D987 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DC36E12360077D0065D987 /* Main.storyboard */; };
 		45DC36E52360077E0065D987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DC36E42360077E0065D987 /* Assets.xcassets */; };
 		45DC36E82360077E0065D987 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DC36E62360077E0065D987 /* LaunchScreen.storyboard */; };
@@ -20,10 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		147B6A0C23606E8F00BE494F /* TrainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailViewController.swift; sourceTree = "<group>"; };
 		4512453823602733007BA5D9 /* trainData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trainData.json; sourceTree = "<group>"; };
 		45DC36D82360077D0065D987 /* Origianl-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Origianl-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DC36DB2360077D0065D987 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45DC36DF2360077D0065D987 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		45DC36E22360077D0065D987 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45DC36E42360077E0065D987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45DC36E72360077E0065D987 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147B6A0B23606E6000BE494F /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				147B6A0C23606E8F00BE494F /* TrainDetailViewController.swift */,
+			);
+			name = detail;
+			sourceTree = "<group>";
+		};
 		451245362360271F007BA5D9 /* datas */ = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +64,7 @@
 		4512453723602729007BA5D9 /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				147B6A0B23606E6000BE494F /* detail */,
 				45DF5ACA2360471400117149 /* TrainListViewController.swift */,
 			);
 			name = viewcontrollers;
@@ -85,7 +94,6 @@
 				4512453723602729007BA5D9 /* viewcontrollers */,
 				45DC36EF236007980065D987 /* storyboards */,
 				45DC36DB2360077D0065D987 /* AppDelegate.swift */,
-				45DC36DF2360077D0065D987 /* ViewController.swift */,
 				45DC36E12360077D0065D987 /* Main.storyboard */,
 				45DC36E42360077E0065D987 /* Assets.xcassets */,
 				45DC36E62360077E0065D987 /* LaunchScreen.storyboard */,
@@ -184,9 +192,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147B6A0D23606E8F00BE494F /* TrainDetailViewController.swift in Sources */,
 				45DF5AC7236028C700117149 /* TrainDataModel.swift in Sources */,
 				45DF5AC52360280000117149 /* TrainStoreObj.swift in Sources */,
-				45DC36E02360077D0065D987 /* ViewController.swift in Sources */,
 				45DF5ACB2360471400117149 /* TrainListViewController.swift in Sources */,
 				45DC36DC2360077D0065D987 /* AppDelegate.swift in Sources */,
 			);
@@ -334,6 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Origianl-Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,6 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Origianl-Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -28,7 +28,7 @@ class TrainListViewController: UIViewController {
     
 }
 
-extension TrainListViewController : UITableViewDataSource {
+extension TrainListViewController : UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.trainList.count
     }
@@ -43,12 +43,30 @@ extension TrainListViewController : UITableViewDataSource {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "trainListCell")
         }
         let trainInfo = self.trainList[indexPath.row]
-        cell.textLabel?.text = trainInfo.Train
+        cell.textLabel?.text =  isFromFirstStackTrainList ?  "車號 : \(trainInfo.Train)" : ""
         cell.detailTextLabel?.numberOfLines = 0
-        cell.detailTextLabel?.text = isFromFirstStackTrainList ? trainInfo.Note
+        cell.detailTextLabel?.text = trainInfo.Note
         cell.accessoryType =  isFromFirstStackTrainList ? .disclosureIndicator : .none
         return cell
     }
 
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let TrainNo = self.trainList[indexPath.row];
+        self.performSegue(withIdentifier: "toTrainDetail", sender: TrainNo)
+    }
+    
 }
+
+extension TrainListViewController{
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let detailVC = segue.destination as? TrainDetailViewController , let TrainNo = sender as? String{
+            detailVC.TrainNo = TrainNo
+        }
+        
+    }
+}
+
+
