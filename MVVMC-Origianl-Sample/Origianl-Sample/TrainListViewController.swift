@@ -14,7 +14,7 @@ class TrainListViewController: UIViewController {
 
     var isFromFirstStackTrainList : Bool = true
 
-    var trainList : [TrainInfo] = TrainStoreObj.shared.trainList {
+    var trainList : [TrainShowData] = TrainStoreObj.shared.trainList {
         didSet{
             self.dataList.reloadData()
         }
@@ -43,9 +43,9 @@ extension TrainListViewController : UITableViewDataSource , UITableViewDelegate 
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "trainListCell")
         }
         let trainInfo = self.trainList[indexPath.row]
-        cell.textLabel?.text =  isFromFirstStackTrainList ?  "車號 : \(trainInfo.Train)" : ""
+        cell.textLabel?.text =  trainInfo.mainTitle
         cell.detailTextLabel?.numberOfLines = 0
-        cell.detailTextLabel?.text = trainInfo.Note
+        cell.detailTextLabel?.text = trainInfo.subTitle
         cell.accessoryType =  isFromFirstStackTrainList ? .disclosureIndicator : .none
         return cell
     }

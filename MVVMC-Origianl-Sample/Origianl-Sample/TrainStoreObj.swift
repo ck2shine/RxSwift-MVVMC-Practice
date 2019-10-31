@@ -14,7 +14,7 @@ class TrainStoreObj{
 
     var trainList :[TrainInfo]
 
-    var trainSearchDict : [String:TrainInfo]
+    var trainTimeTable : [String:[TimeData]]
 
     init() {
         let fileUrl = Bundle.main.url(forResource: "trainData", withExtension: ".json")
@@ -25,10 +25,11 @@ class TrainStoreObj{
 
         self.trainList = trainInfo.TrainInfos
 
-        self.trainSearchDict = self.trainList.reduce([:], { (resultDict, trainInfo) -> [String:TrainInfo] in
+        self.trainTimeTable = self.trainList.reduce([:], { (resultDict, trainInfo) -> [String:[TimeData]] in
             var resultDictpoint = resultDict
             let TrainNO = trainInfo.Train
-            resultDictpoint[TrainNO] = trainInfo
+            
+            resultDictpoint[TrainNO] = trainInfo.TimeInfos
             return resultDictpoint
         })
     }

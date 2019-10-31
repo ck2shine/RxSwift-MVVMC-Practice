@@ -12,14 +12,53 @@ struct TrainData : Codable{
     var TrainInfos : [TrainInfo]
 }
 
-struct TrainInfo : Codable{
-    var Train : String
-    var Note : String
+struct TrainInfo : Codable , TrainShowData{
+    var mainTitle: String?
+    
+    var subTitle: String?
+    
+    var Train : String{
+        didSet
+        {
+            self.mainTitle = "火車編號:\(Train)"
+        }
+    }
+    
+    
+    var Note : String{
+        didSet
+        {
+            self.subTitle = Note
+        }
+    }
     var TimeInfos : [TimeData]
 }
 
-struct TimeData : Codable {
+struct TimeData : Codable , TrainShowData{
+    var mainTitle: String?
+    
+    var subTitle: String?
+    
     var Station : String
+    {
+        didSet
+        {
+            self.mainTitle = "車站代碼:\(Station)"
+        }
+    }
+    
     var ARRTime : String
-    var DEPTime : String
+    {
+           didSet
+           {
+               self.subTitle = ARRTime
+           }
+       }
+    
+}
+
+
+protocol TrainShowData {
+    var mainTitle : String?{get set}
+    var subTitle : String?{get set}
 }
