@@ -30,6 +30,7 @@ class TrainStoreObj{
             let TrainNO = trainInfo.Train
             
             resultDictpoint[TrainNO] = trainInfo.TimeInfos
+            
             return resultDictpoint
         })
     }

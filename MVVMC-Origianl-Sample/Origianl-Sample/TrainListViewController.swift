@@ -9,21 +9,43 @@
 import UIKit
 
 class TrainListViewController: UIViewController {
-
+    @IBOutlet weak var LogoutButton: UIBarButtonItem!
+    @IBAction func LogOutAction(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.replaceToViewControllers(.SignIn)
+    }
+    
     @IBOutlet weak var dataList: UITableView!
 
     var isFromFirstStackTrainList : Bool = true
 
     var trainList : [TrainShowData] = TrainStoreObj.shared.trainList {
         didSet{
-            self.dataList.reloadData()
+            self.dataList?.reloadData()
         }
     }
+    
+    var trainNo : String?{
+        didSet
+        {
+            guard let trainNo = trainNo else {return }
+            trainList = TrainStoreObj.shared.trainTimeTable[trainNo] ?? []
+                   title = "TimeTable : \(trainNo)"
+        }
+       
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if !isFromFirstStackTrainList
+        {
+            self.LogoutButton.isEnabled = false
+            self.LogoutButton.tintColor = .clear
+        }
+        
+       
     }
     
 }
@@ -52,8 +74,12 @@ extension TrainListViewController : UITableViewDataSource , UITableViewDelegate 
 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let TrainNo = self.trainList[indexPath.row];
-        self.performSegue(withIdentifier: "toTrainDetail", sender: TrainNo)
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard isFromFirstStackTrainList else {
+           return
+         }
+        let trainInfoData = self.trainList[indexPath.row];
+        self.performSegue(withIdentifier: "toTrainDetail", sender: trainInfoData)
     }
     
 }
@@ -62,8 +88,8 @@ extension TrainListViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let detailVC = segue.destination as? TrainDetailViewController , let TrainNo = sender as? String{
-            detailVC.TrainNo = TrainNo
+        if let detailVC = segue.destination as? TrainDetailViewController , let trainInfoData = sender as? TrainInfo{
+            detailVC.trainInfoData = trainInfoData
         }
         
     }
