@@ -9,6 +9,6 @@
 import UIKit
 
 class ApplicationCoordinator: Coordinator<UIViewController>{
-
-    s
+    
+    private let dataObjectDependancy = TrainStoreObj()
 }

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		147B6A0D23606E8F00BE494F /* TrainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B6A0C23606E8F00BE494F /* TrainDetailViewController.swift */; };
+		148AE996237073DE00C81AB8 /* Dependancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE995237073DE00C81AB8 /* Dependancy.swift */; };
+		148AE998237082C700C81AB8 /* TrainListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE997237082C700C81AB8 /* TrainListCoordinator.swift */; };
+		148AE99A237082DE00C81AB8 /* TrainDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE999237082DE00C81AB8 /* TrainDetailCoordinator.swift */; };
+		148AE99D2370863A00C81AB8 /* TrainListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE99C2370863A00C81AB8 /* TrainListViewControllerDelegate.swift */; };
+		148AE99F2370873100C81AB8 /* TrainDetailViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE99E2370873100C81AB8 /* TrainDetailViewControllerDelegate.swift */; };
 		14D6641F236F2DED00A317CD /* LoginViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D6641E236F2DED00A317CD /* LoginViewStoryboard.storyboard */; };
 		14D66422236F2E1300A317CD /* LoginViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D66421236F2E1300A317CD /* LoginViewcontroller.swift */; };
 		4512453923602733007BA5D9 /* trainData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4512453823602733007BA5D9 /* trainData.json */; };
@@ -28,6 +33,11 @@
 
 /* Begin PBXFileReference section */
 		147B6A0C23606E8F00BE494F /* TrainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailViewController.swift; sourceTree = "<group>"; };
+		148AE995237073DE00C81AB8 /* Dependancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependancy.swift; sourceTree = "<group>"; };
+		148AE997237082C700C81AB8 /* TrainListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListCoordinator.swift; sourceTree = "<group>"; };
+		148AE999237082DE00C81AB8 /* TrainDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailCoordinator.swift; sourceTree = "<group>"; };
+		148AE99C2370863A00C81AB8 /* TrainListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListViewControllerDelegate.swift; sourceTree = "<group>"; };
+		148AE99E2370873100C81AB8 /* TrainDetailViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailViewControllerDelegate.swift; sourceTree = "<group>"; };
 		14D6641E236F2DED00A317CD /* LoginViewStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewStoryboard.storyboard; sourceTree = "<group>"; };
 		14D66421236F2E1300A317CD /* LoginViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewcontroller.swift; sourceTree = "<group>"; };
 		4512453823602733007BA5D9 /* trainData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trainData.json; sourceTree = "<group>"; };
@@ -63,8 +73,26 @@
 			isa = PBXGroup;
 			children = (
 				147B6A0C23606E8F00BE494F /* TrainDetailViewController.swift */,
+				148AE99E2370873100C81AB8 /* TrainDetailViewControllerDelegate.swift */,
 			);
 			name = detail;
+			sourceTree = "<group>";
+		};
+		148AE9942370737B00C81AB8 /* dependancy */ = {
+			isa = PBXGroup;
+			children = (
+				148AE995237073DE00C81AB8 /* Dependancy.swift */,
+			);
+			name = dependancy;
+			sourceTree = "<group>";
+		};
+		148AE99B2370860900C81AB8 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				45DF5ACA2360471400117149 /* TrainListViewController.swift */,
+				148AE99C2370863A00C81AB8 /* TrainListViewControllerDelegate.swift */,
+			);
+			name = List;
 			sourceTree = "<group>";
 		};
 		14D66420236F2DFD00A317CD /* Login */ = {
@@ -89,7 +117,7 @@
 			children = (
 				14D66420236F2DFD00A317CD /* Login */,
 				147B6A0B23606E6000BE494F /* detail */,
-				45DF5ACA2360471400117149 /* TrainListViewController.swift */,
+				148AE99B2370860900C81AB8 /* List */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -100,6 +128,8 @@
 				45785DFE237022DC008626AC /* Coordinator.swift */,
 				45785E002370242D008626AC /* CoordinateProtocol.swift */,
 				45785E02237024DD008626AC /* ApplicationCoordinator.swift */,
+				148AE997237082C700C81AB8 /* TrainListCoordinator.swift */,
+				148AE999237082DE00C81AB8 /* TrainDetailCoordinator.swift */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -131,8 +161,9 @@
 		45DC36DA2360077D0065D987 /* Finish-Sample */ = {
 			isa = PBXGroup;
 			children = (
-				45785DFD237022CE008626AC /* Coordinators */,
 				45A62E33236FECF1005F3F39 /* Animation */,
+				148AE9942370737B00C81AB8 /* dependancy */,
+				45785DFD237022CE008626AC /* Coordinators */,
 				45DF5AC3236027A100117149 /* Models */,
 				451245362360271F007BA5D9 /* datas */,
 				4512453723602729007BA5D9 /* viewcontrollers */,
@@ -240,14 +271,19 @@
 			files = (
 				45A62E37236FFB63005F3F39 /* LoginAnimation.swift in Sources */,
 				14D66422236F2E1300A317CD /* LoginViewcontroller.swift in Sources */,
+				148AE99A237082DE00C81AB8 /* TrainDetailCoordinator.swift in Sources */,
 				147B6A0D23606E8F00BE494F /* TrainDetailViewController.swift in Sources */,
 				45DF5AC7236028C700117149 /* TrainDataModel.swift in Sources */,
 				45DF5AC52360280000117149 /* TrainStoreObj.swift in Sources */,
 				45A62E35236FED62005F3F39 /* PreloadViewController.swift in Sources */,
 				45DF5ACB2360471400117149 /* TrainListViewController.swift in Sources */,
 				45DC36DC2360077D0065D987 /* AppDelegate.swift in Sources */,
+				148AE998237082C700C81AB8 /* TrainListCoordinator.swift in Sources */,
 				45785DFF237022DC008626AC /* Coordinator.swift in Sources */,
 				45785E012370242D008626AC /* CoordinateProtocol.swift in Sources */,
+				148AE99D2370863A00C81AB8 /* TrainListViewControllerDelegate.swift in Sources */,
+				148AE99F2370873100C81AB8 /* TrainDetailViewControllerDelegate.swift in Sources */,
+				148AE996237073DE00C81AB8 /* Dependancy.swift in Sources */,
 				45785E03237024DD008626AC /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,9 +8,13 @@
 
 import Foundation
 
-class TrainStoreObj{
-    static let shared = TrainStoreObj()
+protocol DataObjectDependancy {
+    
+}
 
+class TrainStoreObj : DataObjectDependancy{
+    
+    static let shared = TrainStoreObj()
 
     var trainList :[TrainInfo]
 
