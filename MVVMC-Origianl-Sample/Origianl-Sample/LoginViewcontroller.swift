@@ -8,18 +8,30 @@
 
 import UIKit
 
-class LoginViewcontroller: UIViewController {
-    
+class LoginViewcontroller: UIViewController  , UIViewControllerTransitioningDelegate{
+    @IBOutlet weak var TopView: UIView!
+
+    @IBOutlet weak var BottonView: UIView!
+  
+   // private var transitionCordinator = LoginAnimation()
+
+
     @IBAction func SignInAction(_ sender: Any) {
-        let appDelegate =  UIApplication.shared.delegate as! AppDelegate
-        appDelegate.replaceToViewControllers(.TrainList)
+        self.dismiss(animated: true){
+            let appDelegate =  UIApplication.shared.delegate as! AppDelegate
+            appDelegate.replaceToViewControllers(.TrainList)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     deinit {
         print("SignIn release")
     }
+
+
 }
+

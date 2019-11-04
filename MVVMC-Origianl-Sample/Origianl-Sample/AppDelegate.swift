@@ -33,7 +33,7 @@ extension AppDelegate{
     func replaceToViewControllers( _ type : rootType){      
         switch type {
         case .SignIn:
-            let signInVC = UIStoryboard(name: "LoginViewStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LoginViewStoryboard")
+            let signInVC = UIStoryboard(name: "LoginViewStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PreloadViewController")
             window?.rootViewController = signInVC
         case .TrainList:
             let trainList = UIStoryboard(name: "TrainViewStoryboard", bundle: nil).instantiateViewController(withIdentifier: "trainNavigationVC")

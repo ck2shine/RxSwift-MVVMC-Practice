@@ -11,6 +11,8 @@
 		14D6641F236F2DED00A317CD /* LoginViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D6641E236F2DED00A317CD /* LoginViewStoryboard.storyboard */; };
 		14D66422236F2E1300A317CD /* LoginViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D66421236F2E1300A317CD /* LoginViewcontroller.swift */; };
 		4512453923602733007BA5D9 /* trainData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4512453823602733007BA5D9 /* trainData.json */; };
+		45A62E35236FED62005F3F39 /* PreloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A62E34236FED62005F3F39 /* PreloadViewController.swift */; };
+		45A62E37236FFB63005F3F39 /* LoginAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A62E36236FFB63005F3F39 /* LoginAnimation.swift */; };
 		45DC36DC2360077D0065D987 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC36DB2360077D0065D987 /* AppDelegate.swift */; };
 		45DC36E32360077D0065D987 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DC36E12360077D0065D987 /* Main.storyboard */; };
 		45DC36E52360077E0065D987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DC36E42360077E0065D987 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 		14D6641E236F2DED00A317CD /* LoginViewStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewStoryboard.storyboard; sourceTree = "<group>"; };
 		14D66421236F2E1300A317CD /* LoginViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewcontroller.swift; sourceTree = "<group>"; };
 		4512453823602733007BA5D9 /* trainData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trainData.json; sourceTree = "<group>"; };
+		45A62E34236FED62005F3F39 /* PreloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadViewController.swift; sourceTree = "<group>"; };
+		45A62E36236FFB63005F3F39 /* LoginAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAnimation.swift; sourceTree = "<group>"; };
 		45DC36D82360077D0065D987 /* Origianl-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Origianl-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DC36DB2360077D0065D987 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DC36E22360077D0065D987 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				14D66421236F2E1300A317CD /* LoginViewcontroller.swift */,
+				45A62E34236FED62005F3F39 /* PreloadViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -83,6 +88,14 @@
 			name = viewcontrollers;
 			sourceTree = "<group>";
 		};
+		45A62E33236FECF1005F3F39 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				45A62E36236FFB63005F3F39 /* LoginAnimation.swift */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
 		45DC36CF2360077D0065D987 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +115,7 @@
 		45DC36DA2360077D0065D987 /* Origianl-Sample */ = {
 			isa = PBXGroup;
 			children = (
+				45A62E33236FECF1005F3F39 /* Animation */,
 				45DF5AC3236027A100117149 /* Models */,
 				451245362360271F007BA5D9 /* datas */,
 				4512453723602729007BA5D9 /* viewcontrollers */,
@@ -207,10 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A62E37236FFB63005F3F39 /* LoginAnimation.swift in Sources */,
 				14D66422236F2E1300A317CD /* LoginViewcontroller.swift in Sources */,
 				147B6A0D23606E8F00BE494F /* TrainDetailViewController.swift in Sources */,
 				45DF5AC7236028C700117149 /* TrainDataModel.swift in Sources */,
 				45DF5AC52360280000117149 /* TrainStoreObj.swift in Sources */,
+				45A62E35236FED62005F3F39 /* PreloadViewController.swift in Sources */,
 				45DF5ACB2360471400117149 /* TrainListViewController.swift in Sources */,
 				45DC36DC2360077D0065D987 /* AppDelegate.swift in Sources */,
 			);
