@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol TrainListViewControllerDelegate {
+protocol TrainListViewControllerDelegate : class {
     func didSelectTrainDetail(_ selectedTrainInfo : TrainShowData)
 }
 
-protocol TrainDetailViewControllerDelegate {
+protocol TrainDetailViewControllerDelegate : class{
 
 }

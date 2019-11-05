@@ -9,10 +9,14 @@
 import UIKit
 
 class TrainListCoordinator : Coordinator<UINavigationController> , CoordinatorDependancy{
+    typealias dataInfo = TrainInfo
     
-    var dependency: DataObjectDependancy?//
+    
+    var dependency: DataObjectDependancy<Any, Any>?//
     private var trainListVC : TrainListViewController? //
     private let trainList : [TrainShowData]//
+    private var trainDetailCoordinator : TrainDetailCoordinator?
+    private(set) var trainListViewController:TrainListViewController?
     
     init(navigator : UINavigationController , trainStoreObj : TrainStoreObj) {
         self.dependency = trainStoreObj
@@ -22,8 +26,18 @@ class TrainListCoordinator : Coordinator<UINavigationController> , CoordinatorDe
     
     override func start() {
         let trainListViewController = TrainListViewController()
+        trainListViewController.delegate = self
         trainListViewController.trainList = self.trainList
         self.presenter?.pushViewController(trainListViewController, animated: true)
+        self.trainListViewController = trainListViewController
     }
+    
+}
+
+extension TrainListCoordinator : TrainListViewControllerDelegate{
+    func didSelectTrainDetail(_ selectedTrainInfo: TrainShowData) {
+        self.trainDetailCoordinator = TrainDetailCoordinator(viewController: self.presenter, trainStoreObj: self.dependency, selectedTrainInfo: <#T##TrainShowData#>)
+    }
+    
     
 }

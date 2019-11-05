@@ -1,76 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pYf-C2-Qec">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="jAn-Vh-75e">
-            <objects>
-                <navigationController storyboardIdentifier="trainNavigationVC" id="pYf-C2-Qec" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="IW4-RY-As1">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="T2O-s4-fry" kind="relationship" relationship="rootViewController" id="QyS-Hj-vs0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BxR-vS-rK1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1026" y="35"/>
-        </scene>
-        <!--TrainList-->
-        <scene sceneID="btn-sZ-joJ">
-            <objects>
-                <viewController title="TrainList" id="T2O-s4-fry" customClass="TrainListViewController" customModule="Origianl_Sample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="54U-w0-sfT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vQB-TJ-1gl">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="T2O-s4-fry" id="V1s-Ot-cCZ"/>
-                                    <outlet property="delegate" destination="T2O-s4-fry" id="00S-E6-2PG"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="vQB-TJ-1gl" firstAttribute="leading" secondItem="xKN-TK-pd0" secondAttribute="leading" id="Db8-Jz-8GL"/>
-                            <constraint firstItem="xKN-TK-pd0" firstAttribute="trailing" secondItem="vQB-TJ-1gl" secondAttribute="trailing" id="Sdo-wf-avJ"/>
-                            <constraint firstItem="xKN-TK-pd0" firstAttribute="bottom" secondItem="vQB-TJ-1gl" secondAttribute="bottom" id="Vq3-vt-0YE"/>
-                            <constraint firstItem="vQB-TJ-1gl" firstAttribute="top" secondItem="xKN-TK-pd0" secondAttribute="top" id="zxD-a0-RS3"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="xKN-TK-pd0"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="TrainList" id="sMc-g8-2TR">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="bFa-92-a9a">
-                            <connections>
-                                <action selector="LogOutAction:" destination="T2O-s4-fry" id="6fR-p6-ffe"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="LogoutButton" destination="bFa-92-a9a" id="s8E-fy-mcS"/>
-                        <outlet property="dataList" destination="vQB-TJ-1gl" id="7oe-Kf-fVg"/>
-                        <segue destination="88Q-wH-cRr" kind="show" identifier="toTrainDetail" id="QjD-HN-kem"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4hk-ME-aEC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-78" y="35"/>
-        </scene>
         <!--TrainDetail-->
         <scene sceneID="iUz-e1-1pr">
             <objects>
-                <tableViewController id="88Q-wH-cRr" customClass="TrainDetailViewController" customModule="Origianl_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TrainDetailViewController" id="88Q-wH-cRr" customClass="TrainDetailViewController" customModule="Finish_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RSc-bB-71b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,15 +190,11 @@
                         <outlet property="CrippleCarLabel" destination="dL2-eX-LWS" id="ZKd-9N-884"/>
                         <outlet property="TrainNoLabel" destination="A0A-qe-TwL" id="ZqZ-5d-ckH"/>
                         <outlet property="carClassLabel" destination="M0O-Wk-X3n" id="n4D-Un-FNG"/>
-                        <segue destination="T2O-s4-fry" kind="show" identifier="toTrainList" id="xXf-99-1bm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9C3-nE-tD1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="35"/>
+            <point key="canvasLocation" x="-4257" y="44"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="QyS-Hj-vs0"/>
-    </inferredMetricsTieBreakers>
 </document>

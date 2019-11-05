@@ -31,7 +31,7 @@
 		45DC36E82360077E0065D987 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DC36E62360077E0065D987 /* LaunchScreen.storyboard */; };
 		45DF5AC52360280000117149 /* TrainStoreObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF5AC42360280000117149 /* TrainStoreObj.swift */; };
 		45DF5AC7236028C700117149 /* TrainDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF5AC6236028C700117149 /* TrainDataModel.swift */; };
-		45DF5AC9236046C600117149 /* TrainViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DF5AC8236046C600117149 /* TrainViewStoryboard.storyboard */; };
+		45DF5AC9236046C600117149 /* TrainDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DF5AC8236046C600117149 /* TrainDetailViewController.storyboard */; };
 		45DF5ACB2360471400117149 /* TrainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF5ACA2360471400117149 /* TrainListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +62,7 @@
 		45DC36E92360077E0065D987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45DF5AC42360280000117149 /* TrainStoreObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStoreObj.swift; sourceTree = "<group>"; };
 		45DF5AC6236028C700117149 /* TrainDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDataModel.swift; sourceTree = "<group>"; };
-		45DF5AC8236046C600117149 /* TrainViewStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrainViewStoryboard.storyboard; sourceTree = "<group>"; };
+		45DF5AC8236046C600117149 /* TrainDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrainDetailViewController.storyboard; sourceTree = "<group>"; };
 		45DF5ACA2360471400117149 /* TrainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,7 +215,7 @@
 		45DC36EF236007980065D987 /* storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				45DF5AC8236046C600117149 /* TrainViewStoryboard.storyboard */,
+				45DF5AC8236046C600117149 /* TrainDetailViewController.storyboard */,
 				14D6641E236F2DED00A317CD /* LoginViewStoryboard.storyboard */,
 				45C23DDB2371577B00E1CDD2 /* PreloadViewController.storyboard */,
 			);
@@ -291,7 +291,7 @@
 			files = (
 				45DC36E82360077E0065D987 /* LaunchScreen.storyboard in Resources */,
 				45DC36E52360077E0065D987 /* Assets.xcassets in Resources */,
-				45DF5AC9236046C600117149 /* TrainViewStoryboard.storyboard in Resources */,
+				45DF5AC9236046C600117149 /* TrainDetailViewController.storyboard in Resources */,
 				4512453923602733007BA5D9 /* trainData.json in Resources */,
 				14D6641F236F2DED00A317CD /* LoginViewStoryboard.storyboard in Resources */,
 				45DC36E32360077D0065D987 /* Main.storyboard in Resources */,

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class LoginCoordinator : Coordinator<UIViewController>{
+class LoginCoordinator : Coordinator<UINavigationController>{
 
 
     override func start() {
         let loginViewController = LoginViewcontroller.fromStoryboard("LoginViewStoryboard") as! LoginViewcontroller
-        if let presenter = presenter as? PreloadViewController {
+        if let presenter = presenter?.viewControllers.first as? PreloadViewController {
             loginViewController.transitioningDelegate = presenter
         }
         loginViewController.delegate = self
