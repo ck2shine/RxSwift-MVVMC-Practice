@@ -8,21 +8,22 @@
 
 import UIKit
 
-class TrainListCoordinator : Coordinator<UIViewController> , CoordinatorDependancy{
+class TrainListCoordinator : Coordinator<UINavigationController> , CoordinatorDependancy{
     
     var dependency: DataObjectDependancy?//
-    private let navigator : UINavigationController //
     private var trainListVC : TrainListViewController? //
     private let trainList : [TrainShowData]//
     
     init(navigator : UINavigationController , trainStoreObj : TrainStoreObj) {
-        self.navigator = navigator
         self.dependency = trainStoreObj
         self.trainList = trainStoreObj.trainList
+        super.init(viewController: navigator)
     }
     
     override func start() {
-        
+        let trainListViewController = TrainListViewController()
+        trainListViewController.trainList = self.trainList
+        self.presenter?.pushViewController(trainListViewController, animated: true)
     }
     
 }

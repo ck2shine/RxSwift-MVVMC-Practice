@@ -8,7 +8,41 @@
 
 import UIKit
 
+enum rootType {
+    case SignIn , TrainList
+}
+
 class ApplicationCoordinator: Coordinator<UIViewController>{
     
     private let dataObjectDependancy = TrainStoreObj()
+    private var preloadViewController : PreloadViewController?
+    private var nextCoordinator : Coordinator<UINavigationController>? // keep reference
+    var window : UIWindow?
+
+    var coordinatorType : rootType
+
+    init(window : UIWindow) {
+        self.window = window
+        self.coordinatorType = .SignIn
+        super.init(viewController: nil)
+    }
+
+    override func start() {
+        let navigator = UINavigationController()
+        switch coordinatorType {
+        case .SignIn:
+            navigator.isToolbarHidden = true
+            let coordinator = PreloadCoordinator(viewController: navigator)
+            nextCoordinator = coordinator
+           
+        case .TrainList:
+
+            navigator.navigationBar.prefersLargeTitles = true
+            let  coordinator = TrainListCoordinator(navigator: navigator, trainStoreObj: dataObjectDependancy)
+            nextCoordinator = coordinator
+        }
+        window?.rootViewController = nextCoordinator?.presenter
+        nextCoordinator?.start()
+        super.start()
+    }
 }

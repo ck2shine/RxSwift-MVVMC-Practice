@@ -16,11 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        window = UIWindow(frame: UIScreen.main.bounds)
-        self.replaceToViewControllers(.SignIn)
-        window?.makeKeyAndVisible()
-        
+
+       let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        self.applicationCoordinator = ApplicationCoordinator(window: window)
+        self.window?.makeKeyAndVisible()
+        self.applicationCoordinator?.start()
+
         return true
     }
     
@@ -28,20 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate{
     
-    enum rootType {
-        case SignIn , TrainList
-    }
-    
-    func replaceToViewControllers( _ type : rootType){      
-        switch type {
-        case .SignIn:
-            let signInVC = UIStoryboard(name: "LoginViewStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PreloadViewController")
-            window?.rootViewController = signInVC
-        case .TrainList:
-            let trainList = UIStoryboard(name: "TrainViewStoryboard", bundle: nil).instantiateViewController(withIdentifier: "trainNavigationVC")
-            window?.rootViewController = trainList
-        }
-        
+    func replaceToViewControllers( _ type : rootType){
+        applicationCoordinator?.coordinatorType = type
+        applicationCoordinator?.start()        
     }
 }
 

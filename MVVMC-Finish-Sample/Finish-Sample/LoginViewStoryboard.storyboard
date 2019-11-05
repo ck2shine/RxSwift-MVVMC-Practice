@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ryY-xO-o98">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,37 +8,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Preload View Controller-->
-        <scene sceneID="6Qg-DH-HEK">
-            <objects>
-                <viewController storyboardIdentifier="PreloadViewController" id="ryY-xO-o98" customClass="PreloadViewController" customModule="Origianl_Sample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yfe-ge-960">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="7es-UC-ANf"/>
-                    </view>
-                    <connections>
-                        <segue destination="Fht-2Q-CdF" kind="presentation" identifier="toSignInViewController" id="Mdx-k1-CER"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sep-ME-QJj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1699" y="-17"/>
-        </scene>
         <!--Login Viewcontroller-->
         <scene sceneID="KTW-Ql-Mlx">
             <objects>
-                <viewController storyboardIdentifier="LoginViewStoryboard" id="Fht-2Q-CdF" customClass="LoginViewcontroller" customModule="Origianl_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewcontroller" id="Fht-2Q-CdF" customClass="LoginViewcontroller" customModule="Finish_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4C0-YP-sKK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPV-Kg-boD">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="404"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="409"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5eM-M7-H28">
-                                        <rect key="frame" x="0.0" y="134.5" width="414" height="208"/>
+                                        <rect key="frame" x="0.0" y="136.5" width="414" height="208"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VBE-Er-lAd">
                                                 <rect key="frame" x="20" y="10" width="374" height="54.5"/>
@@ -87,7 +69,7 @@
                                         <edgeInsets key="layoutMargins" top="10" left="20" bottom="10" right="20"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHY-9h-bVc">
-                                        <rect key="frame" x="0.0" y="394" width="414" height="10"/>
+                                        <rect key="frame" x="0.0" y="399" width="414" height="10"/>
                                         <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="U61-Pp-Xcw"/>
@@ -105,7 +87,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-TI-nGe">
-                                <rect key="frame" x="0.0" y="404" width="414" height="404"/>
+                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>

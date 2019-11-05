@@ -9,6 +9,9 @@
 import UIKit
 
 class LoginViewcontroller: UIViewController  , UIViewControllerTransitioningDelegate{
+
+    weak var delegate : LoginViewControllerDelegat?
+
     @IBOutlet weak var TopView: UIView!
 
     @IBOutlet weak var BottonView: UIView!
@@ -17,10 +20,7 @@ class LoginViewcontroller: UIViewController  , UIViewControllerTransitioningDele
 
 
     @IBAction func SignInAction(_ sender: Any) {
-        self.dismiss(animated: true){
-            let appDelegate =  UIApplication.shared.delegate as! AppDelegate
-            appDelegate.replaceToViewControllers(.TrainList)
-        }
+        self.delegate?.reDirectToTrainList()
     }
     
     override func viewDidLoad() {

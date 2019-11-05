@@ -6,4 +6,8 @@
 //  Copyright © 2019 BrilleShine. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class TrainDetailCoordinator: Coordinator<UINavigationController> {
+    
+}

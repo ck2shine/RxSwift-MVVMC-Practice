@@ -9,4 +9,5 @@
 import Foundation
 protocol CoordinateProtocol {
     func start()
+    func stop()
 }

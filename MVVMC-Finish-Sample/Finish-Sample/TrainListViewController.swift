@@ -15,13 +15,22 @@ class TrainListViewController: UIViewController {
         appDelegate.replaceToViewControllers(.SignIn)
     }
     
-    @IBOutlet weak var dataList: UITableView!
+    //@IBOutlet weak var dataList: UITableView!//use coding
 
-    var isFromFirstStackTrainList : Bool = true
+    private lazy var dataTable : UITableView = {
+        let tableView = UITableView()
 
-    var trainList : [TrainShowData] = TrainStoreObj.shared.trainList {
+        return tableView
+    }()
+
+
+    var isFromFirstStackTrainList : Bool = true // no need this variable
+
+    var cellAccessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+
+    var trainList : [TrainShowData] = [] { //not form share instance
         didSet{
-            self.dataList?.reloadData()
+            self.dataTable.reloadData()// cancel optional Outlet
         }
     }
     
@@ -30,24 +39,34 @@ class TrainListViewController: UIViewController {
         {
             guard let trainNo = trainNo else {return }
             trainList = TrainStoreObj.shared.trainTimeTable[trainNo] ?? []
-                   title = "TimeTable : \(trainNo)"
+            title = "TimeTable : \(trainNo)"
         }
-       
+
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        layoutViews()
+
         if !isFromFirstStackTrainList
         {
             self.LogoutButton.isEnabled = false
             self.LogoutButton.tintColor = .clear
         }
-        
-       
     }
-    
+}
+
+extension TrainListViewController{
+    final private func layoutViews(){
+        dataTable.backgroundColor = .white
+        view.addSubview(dataTable)
+        dataTable.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
+        dataTable.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor).isActive = true
+        dataTable.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
+        dataTable.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
+    }
 }
 
 extension TrainListViewController : UITableViewDataSource , UITableViewDelegate {
@@ -68,7 +87,7 @@ extension TrainListViewController : UITableViewDataSource , UITableViewDelegate 
         cell.textLabel?.text =  trainInfo.mainTitle
         cell.detailTextLabel?.numberOfLines = 0
         cell.detailTextLabel?.text = trainInfo.subTitle
-        cell.accessoryType =  isFromFirstStackTrainList ? .disclosureIndicator : .none
+        cell.accessoryType =  cellAccessoryType // from setting
         return cell
     }
 
@@ -76,8 +95,8 @@ extension TrainListViewController : UITableViewDataSource , UITableViewDelegate 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard isFromFirstStackTrainList else {
-           return
-         }
+            return
+        }
         let trainInfoData = self.trainList[indexPath.row];
         self.performSegue(withIdentifier: "toTrainDetail", sender: trainInfoData)
     }

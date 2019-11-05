@@ -8,8 +8,22 @@
 
 import UIKit
 class Coordinator<T: UIViewController> : CoordinateProtocol {
-    func start() {
+
+    var presenter : T?
+
+    func stop() {
 
     }
 
+    func start() {
+
+    }
+    
+   init(viewController : T?) {
+        self.presenter = viewController
+    }
+
+    deinit {
+        print(" this Coordinate \(String(describing: self)) deinit ")
+    }
 }

@@ -11,25 +11,26 @@ import UIKit
 
 class PreloadViewController: UIViewController  {
 
+    weak var delegate : ProloadViewControllerDelegate?
+
     var isAlreadyLoadLogin = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         if !isAlreadyLoadLogin{
-            let signInVC = UIStoryboard(name: "LoginViewStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LoginViewStoryboard")
-            signInVC.transitioningDelegate = self
-            self.present(signInVC, animated: true, completion: nil)
+            delegate?.startAnimatingLoginView()
             isAlreadyLoadLogin = true
         }
     }
 
+    deinit {
+        print("preLoad release")
+    }
 }
 
 extension PreloadViewController : UIViewControllerTransitioningDelegate{
