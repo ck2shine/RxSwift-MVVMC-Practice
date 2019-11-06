@@ -14,7 +14,7 @@ enum rootType {
 
 class ApplicationCoordinator: Coordinator<UIViewController>{
     
-    private let dataObjectDependancy = TrainStoreObj()
+    private let dataObjectDependancy = LoadingDataDependancy()
     private var preloadViewController : PreloadViewController?
     private var nextCoordinator : Coordinator<UINavigationController>? // keep reference
     var window : UIWindow?
@@ -38,7 +38,7 @@ class ApplicationCoordinator: Coordinator<UIViewController>{
         case .TrainList:
 
             navigator.navigationBar.prefersLargeTitles = true
-            let  coordinator = TrainListCoordinator(navigator: navigator, trainStoreObj: dataObjectDependancy)
+            let  coordinator = TrainListCoordinator(navigator: navigator, loadDataObj: dataObjectDependancy)
             nextCoordinator = coordinator
         }
         window?.rootViewController = nextCoordinator?.presenter

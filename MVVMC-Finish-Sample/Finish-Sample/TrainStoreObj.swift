@@ -8,32 +8,27 @@
 
 import Foundation
 
-class DataObjectDependancy<T,K> {
-    var dataList : [T]?
-    var dataDict : [String:[K]]?
-}
+class TrainStoreObj : TrainDataProtocol{
 
-class TrainStoreObj : DataObjectDependancy<TrainInfo,TimeData>{
+    var params: paramsItem?
 
-    override init() {
+    func fetchListData(_ complete: @escaping(TrainListItem, Error?) -> ()) {
+        
+        var resultItem = TrainListItem()
+        defer{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                 complete(resultItem , nil)
+            }
+        }
+
         let fileUrl = Bundle.main.url(forResource: "trainData", withExtension: ".json")
 
         let data = try! Data(contentsOf: fileUrl!)
 
         let trainInfo = try! JSONDecoder().decode(TrainData.self, from: data)
 
-        self.dataList = trainInfo.TrainInfos
-
-        self.dataDict = self.dataList.reduce([:], { (resultDict, trainInfo) -> [String:[TimeData]] in
-            var resultDictpoint = resultDict
-            let TrainNO = trainInfo.Train
-            
-            resultDictpoint[TrainNO] = trainInfo.TimeInfos
-            
-            return resultDictpoint
-        })
+        resultItem.dataList = trainInfo.TrainInfos
     }
-
 }
 
 

@@ -9,7 +9,9 @@
 import UIKit
 
 class TrainDetailViewController: UITableViewController {
-    
+
+    weak var delegate : TrainDetailViewControllerDelegate?
+
     @IBOutlet weak var TrainNoLabel: UILabel!
     
     @IBOutlet weak var carClassLabel: UILabel!
@@ -29,6 +31,10 @@ class TrainDetailViewController: UITableViewController {
         // Do any additional setup after loading the view.
         self.showDataToView()
     }
+
+    deinit {
+        print(" detailVC has release")
+    }
     
 }
 
@@ -45,17 +51,20 @@ extension TrainDetailViewController  {
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard indexPath.section == tableView.numberOfSections - 1  else { return}
-        self.performSegue(withIdentifier: "toTrainList", sender: trainInfoData?.Train)
+        self.delegate?.didSelectTrainNoForTimeTable(trainInfoData!.Train)
+        // delete under line
+        //self.performSegue(withIdentifier: "toTrainList", sender: trainInfoData?.Train)
     }
 }
 
-extension TrainDetailViewController{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let toListView = segue.destination as? TrainListViewController {
-            
-            toListView.isFromFirstStackTrainList = false
-            toListView.trainNo = sender as? String
-            
-        }
-    }
-}
+//NO more this
+//extension TrainDetailViewController{
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let toListView = segue.destination as? TrainListViewController {
+//
+//            toListView.isFromFirstStackTrainList = false
+//            toListView.trainNo = sender as? String
+//
+//        }
+//    }
+//}

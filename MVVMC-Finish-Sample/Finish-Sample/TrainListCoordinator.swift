@@ -9,25 +9,25 @@
 import UIKit
 
 class TrainListCoordinator : Coordinator<UINavigationController> , CoordinatorDependancy{
-    typealias dataInfo = TrainInfo
-    
-    
-    var dependency: DataObjectDependancy<Any, Any>?//
+
+    var dependency: LoadingDataDependancy?
+
     private var trainListVC : TrainListViewController? //
-    private let trainList : [TrainShowData]//
+    //private let trainList : [TrainShowData]// gone
     private var trainDetailCoordinator : TrainDetailCoordinator?
     private(set) var trainListViewController:TrainListViewController?
     
-    init(navigator : UINavigationController , trainStoreObj : TrainStoreObj) {
-        self.dependency = trainStoreObj
-        self.trainList = trainStoreObj.trainList
+    init(navigator : UINavigationController , loadDataObj : LoadingDataDependancy) {
+        self.dependency = loadDataObj
+       // self.trainList = trainStoreObj.trainList
         super.init(viewController: navigator)
     }
     
     override func start() {
-        let trainListViewController = TrainListViewController()
+        let viewModel = TrainListViewModel(trainStoreObj: self.dependency!.trainObj)
+
+        let trainListViewController = TrainListViewController(viewModel: viewModel)
         trainListViewController.delegate = self
-        trainListViewController.trainList = self.trainList
         self.presenter?.pushViewController(trainListViewController, animated: true)
         self.trainListViewController = trainListViewController
     }
@@ -35,8 +35,12 @@ class TrainListCoordinator : Coordinator<UINavigationController> , CoordinatorDe
 }
 
 extension TrainListCoordinator : TrainListViewControllerDelegate{
-    func didSelectTrainDetail(_ selectedTrainInfo: TrainShowData) {
-        self.trainDetailCoordinator = TrainDetailCoordinator(viewController: self.presenter, trainStoreObj: self.dependency, selectedTrainInfo: <#T##TrainShowData#>)
+    func didSelectTrainDetail(_ selectedTrainInfo: TrainInfo) {
+
+        let trainDetailCoordinator =  TrainDetailCoordinator(viewController: self.presenter , loadDataObj: self.dependency!, selectedTrainInfo: selectedTrainInfo)
+
+        trainDetailCoordinator.start()
+        self.trainDetailCoordinator = trainDetailCoordinator
     }
     
     

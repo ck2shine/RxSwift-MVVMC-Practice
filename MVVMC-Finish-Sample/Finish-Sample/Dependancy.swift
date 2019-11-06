@@ -9,8 +9,8 @@
 import Foundation
 
 protocol CoordinatorDependancy {
-    associatedtype dataInfo
-    var dependency : DataObjectDependancy<Any, Any>?{ get set}
+    
+    var dependency : LoadingDataDependancy?{ get set}
 }
 
 

@@ -9,9 +9,9 @@
 import Foundation
 
 protocol TrainListViewControllerDelegate : class {
-    func didSelectTrainDetail(_ selectedTrainInfo : TrainShowData)
+    func didSelectTrainDetail(_ selectedTrainInfo : TrainInfo)
 }
 
 protocol TrainDetailViewControllerDelegate : class{
-
+    func didSelectTrainNoForTimeTable(_ trainNo : String)
 }
