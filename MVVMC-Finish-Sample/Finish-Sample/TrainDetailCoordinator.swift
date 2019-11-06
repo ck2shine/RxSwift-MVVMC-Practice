@@ -10,11 +10,11 @@ import UIKit
 
 class TrainDetailCoordinator: Coordinator<UINavigationController> , CoordinatorDependancy {
     var dependency: LoadingDataDependancy?
-
+    
     private var selectedTrainInfo :TrainInfo?
     private(set) var trainDetailViewController : TrainDetailViewController?
     private var timeTableCoordinator : TimeTableCoordinator?
-
+    
     init(viewController: UINavigationController? , loadDataObj : LoadingDataDependancy , selectedTrainInfo : TrainInfo) {
         self.dependency = loadDataObj
         self.selectedTrainInfo = selectedTrainInfo
@@ -34,27 +34,22 @@ class TrainDetailCoordinator: Coordinator<UINavigationController> , CoordinatorD
 extension TrainDetailCoordinator:TrainDetailViewControllerDelegate{
     func didSelectTrainNoForTimeTable(_ trainNo: String) {
         //method 1
-/*
-        let viewModel = TrainListViewModel()
-    //    if let selectedTrainDetail = self.selectedTrainInfo as? 
-        viewModel.dataList.value = self.selectedTrainInfo?.TimeInfos
+        
+        self.dependency?.trainObjForDetail.params?.trainNo = trainNo
+        let viewModel = TrainListViewModel(trainStoreObj: self.dependency?.trainObjForDetail)
         let timeTableViewController = TrainListViewController(viewModel: viewModel)
-        timeTableViewController.cellAccessoryType = .none
         timeTableViewController.title = "TimeTable"
         self.presenter?.pushViewController(timeTableViewController, animated: true)
-        */
-        //method2
-        let timeTableCoordinator = TimeTableCoordinator(viewController: self.presenter, loadDataObj: self.dependency!)
-        timeTableCoordinator.start()
-        self.timeTableCoordinator = timeTableCoordinator
         /*
-
-
-
+         //method2
+         self.dependency?.trainObjForDetail.params?.trainNo = trainNo
+         
+         let timeTableCoordinator = TimeTableCoordinator(viewController: self.presenter, loadDataObj: self.dependency!)
+         
+         timeTableCoordinator.start()
+         self.timeTableCoordinator = timeTableCoordinator
          */
-
-
     }
-
-
+    
+    
 }

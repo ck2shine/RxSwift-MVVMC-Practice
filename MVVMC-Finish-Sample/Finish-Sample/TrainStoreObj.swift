@@ -12,22 +12,25 @@ class TrainStoreObj : TrainDataProtocol{
 
     var params: paramsItem?
 
+    let taskQueue =  DispatchQueue(label: "timeTableQuere", qos: .default, attributes: .concurrent)
+    
     func fetchListData(_ complete: @escaping(TrainListItem, Error?) -> ()) {
-        
-        var resultItem = TrainListItem()
-        defer{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                 complete(resultItem , nil)
+        taskQueue.async {
+            var resultItem = TrainListItem()
+            defer{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                     complete(resultItem , nil)
+                }
             }
+
+            let fileUrl = Bundle.main.url(forResource: "trainData", withExtension: ".json")
+
+            let data = try! Data(contentsOf: fileUrl!)
+
+            let trainInfo = try! JSONDecoder().decode(TrainData.self, from: data)
+
+            resultItem.dataList = trainInfo.TrainInfos
         }
-
-        let fileUrl = Bundle.main.url(forResource: "trainData", withExtension: ".json")
-
-        let data = try! Data(contentsOf: fileUrl!)
-
-        let trainInfo = try! JSONDecoder().decode(TrainData.self, from: data)
-
-        resultItem.dataList = trainInfo.TrainInfos
     }
 }
 

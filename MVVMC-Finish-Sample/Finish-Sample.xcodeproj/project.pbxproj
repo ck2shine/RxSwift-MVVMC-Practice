@@ -7,10 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14081D8C237337AF00F28699 /* TrainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC0F6A237265D200860782 /* TrainListViewModel.swift */; };
+		14081D8D23733A1100F28699 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC0F68237264F900860782 /* Box.swift */; };
+		14081D8E23733A2F00F28699 /* TrainListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B27F7223730E5F00D78D36 /* TrainListCellViewModel.swift */; };
+		14081D8F23733A3400F28699 /* TrainStoreObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF5AC42360280000117149 /* TrainStoreObj.swift */; };
 		147B6A0D23606E8F00BE494F /* TrainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B6A0C23606E8F00BE494F /* TrainDetailViewController.swift */; };
 		148AE996237073DE00C81AB8 /* Dependancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE995237073DE00C81AB8 /* Dependancy.swift */; };
 		148AE998237082C700C81AB8 /* TrainListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE997237082C700C81AB8 /* TrainListCoordinator.swift */; };
 		148AE99A237082DE00C81AB8 /* TrainDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE999237082DE00C81AB8 /* TrainDetailCoordinator.swift */; };
+		1490CAC423731B9000F4FC70 /* TrainDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC0F6523725B5800860782 /* TrainDataProtocol.swift */; };
+		1490CAC523731BC100F4FC70 /* TrainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC0F6C237278B300860782 /* TrainItem.swift */; };
+		1490CAC623731BDF00F4FC70 /* TrainDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF5AC6236028C700117149 /* TrainDataModel.swift */; };
+		14B27F6F2373067300D78D36 /* TrainListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B27F6E2373067300D78D36 /* TrainListController.swift */; };
+		14B27F7123730CC500D78D36 /* TrainListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B27F7023730CC500D78D36 /* TrainListViewCell.swift */; };
+		14B27F7323730E5F00D78D36 /* TrainListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B27F7223730E5F00D78D36 /* TrainListCellViewModel.swift */; };
+		14B27F7B2373192B00D78D36 /* Finish_SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B27F7A2373192B00D78D36 /* Finish_SampleTests.swift */; };
 		14D6641F236F2DED00A317CD /* LoginViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D6641E236F2DED00A317CD /* LoginViewStoryboard.storyboard */; };
 		14D66422236F2E1300A317CD /* LoginViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D66421236F2E1300A317CD /* LoginViewcontroller.swift */; };
 		4512453923602733007BA5D9 /* trainData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4512453823602733007BA5D9 /* trainData.json */; };
@@ -43,11 +54,27 @@
 		45DF5ACB2360471400117149 /* TrainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF5ACA2360471400117149 /* TrainListViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		14B27F7D2373192B00D78D36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45DC36D02360077D0065D987 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45DC36D72360077D0065D987;
+			remoteInfo = "Finish-Sample";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		147B6A0C23606E8F00BE494F /* TrainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailViewController.swift; sourceTree = "<group>"; };
 		148AE995237073DE00C81AB8 /* Dependancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependancy.swift; sourceTree = "<group>"; };
 		148AE997237082C700C81AB8 /* TrainListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListCoordinator.swift; sourceTree = "<group>"; };
 		148AE999237082DE00C81AB8 /* TrainDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailCoordinator.swift; sourceTree = "<group>"; };
+		14B27F6E2373067300D78D36 /* TrainListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListController.swift; sourceTree = "<group>"; };
+		14B27F7023730CC500D78D36 /* TrainListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListViewCell.swift; sourceTree = "<group>"; };
+		14B27F7223730E5F00D78D36 /* TrainListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListCellViewModel.swift; sourceTree = "<group>"; };
+		14B27F782373192B00D78D36 /* Finish-SampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Finish-SampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14B27F7A2373192B00D78D36 /* Finish_SampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finish_SampleTests.swift; sourceTree = "<group>"; };
+		14B27F7C2373192B00D78D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14D6641E236F2DED00A317CD /* LoginViewStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewStoryboard.storyboard; sourceTree = "<group>"; };
 		14D66421236F2E1300A317CD /* LoginViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewcontroller.swift; sourceTree = "<group>"; };
 		4512453823602733007BA5D9 /* trainData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trainData.json; sourceTree = "<group>"; };
@@ -83,6 +110,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		14B27F752373192B00D78D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45DC36D52360077D0065D987 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,8 +149,20 @@
 			children = (
 				45DF5ACA2360471400117149 /* TrainListViewController.swift */,
 				45DC0F6A237265D200860782 /* TrainListViewModel.swift */,
+				14B27F6E2373067300D78D36 /* TrainListController.swift */,
+				14B27F7023730CC500D78D36 /* TrainListViewCell.swift */,
+				14B27F7223730E5F00D78D36 /* TrainListCellViewModel.swift */,
 			);
 			name = List;
+			sourceTree = "<group>";
+		};
+		14B27F792373192B00D78D36 /* Finish-SampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				14B27F7A2373192B00D78D36 /* Finish_SampleTests.swift */,
+				14B27F7C2373192B00D78D36 /* Info.plist */,
+			);
+			path = "Finish-SampleTests";
 			sourceTree = "<group>";
 		};
 		14D66420236F2DFD00A317CD /* Login */ = {
@@ -208,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				45DC36DA2360077D0065D987 /* Finish-Sample */,
+				14B27F792373192B00D78D36 /* Finish-SampleTests */,
 				45DC36D92360077D0065D987 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -216,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				45DC36D82360077D0065D987 /* Finish-Sample.app */,
+				14B27F782373192B00D78D36 /* Finish-SampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,6 +314,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		14B27F772373192B00D78D36 /* Finish-SampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14B27F7F2373192B00D78D36 /* Build configuration list for PBXNativeTarget "Finish-SampleTests" */;
+			buildPhases = (
+				14B27F742373192B00D78D36 /* Sources */,
+				14B27F752373192B00D78D36 /* Frameworks */,
+				14B27F762373192B00D78D36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14B27F7E2373192B00D78D36 /* PBXTargetDependency */,
+			);
+			name = "Finish-SampleTests";
+			productName = "Finish-SampleTests";
+			productReference = 14B27F782373192B00D78D36 /* Finish-SampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		45DC36D72360077D0065D987 /* Finish-Sample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45DC36EC2360077E0065D987 /* Build configuration list for PBXNativeTarget "Finish-Sample" */;
@@ -293,6 +359,10 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = BrilleShine;
 				TargetAttributes = {
+					14B27F772373192B00D78D36 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 45DC36D72360077D0065D987;
+					};
 					45DC36D72360077D0065D987 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -312,11 +382,19 @@
 			projectRoot = "";
 			targets = (
 				45DC36D72360077D0065D987 /* Finish-Sample */,
+				14B27F772373192B00D78D36 /* Finish-SampleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		14B27F762373192B00D78D36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45DC36D62360077D0065D987 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,6 +413,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		14B27F742373192B00D78D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1490CAC623731BDF00F4FC70 /* TrainDataModel.swift in Sources */,
+				1490CAC523731BC100F4FC70 /* TrainItem.swift in Sources */,
+				14081D8C237337AF00F28699 /* TrainListViewModel.swift in Sources */,
+				14081D8E23733A2F00F28699 /* TrainListCellViewModel.swift in Sources */,
+				14081D8F23733A3400F28699 /* TrainStoreObj.swift in Sources */,
+				14081D8D23733A1100F28699 /* Box.swift in Sources */,
+				1490CAC423731B9000F4FC70 /* TrainDataProtocol.swift in Sources */,
+				14B27F7B2373192B00D78D36 /* Finish_SampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45DC36D42360077D0065D987 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,6 +439,9 @@
 				147B6A0D23606E8F00BE494F /* TrainDetailViewController.swift in Sources */,
 				45DC0F69237264F900860782 /* Box.swift in Sources */,
 				45DC0F7123729F6400860782 /* TimeTableCoordinator.swift in Sources */,
+				14B27F7123730CC500D78D36 /* TrainListViewCell.swift in Sources */,
+				14B27F7323730E5F00D78D36 /* TrainListCellViewModel.swift in Sources */,
+				14B27F6F2373067300D78D36 /* TrainListController.swift in Sources */,
 				45DC0F6B237265D200860782 /* TrainListViewModel.swift in Sources */,
 				45DF5AC7236028C700117149 /* TrainDataModel.swift in Sources */,
 				45C23DE223715B5500E1CDD2 /* TrainListLineProtocols.swift in Sources */,
@@ -370,6 +466,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		14B27F7E2373192B00D78D36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45DC36D72360077D0065D987 /* Finish-Sample */;
+			targetProxy = 14B27F7D2373192B00D78D36 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		45DC36E12360077D0065D987 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -390,6 +494,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		14B27F802373192B00D78D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Finish-SampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brille.Finish-SampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Finish-Sample.app/Finish-Sample";
+			};
+			name = Debug;
+		};
+		14B27F812373192B00D78D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Finish-SampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brille.Finish-SampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Finish-Sample.app/Finish-Sample";
+			};
+			name = Release;
+		};
 		45DC36EA2360077E0065D987 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -543,6 +685,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		14B27F7F2373192B00D78D36 /* Build configuration list for PBXNativeTarget "Finish-SampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14B27F802373192B00D78D36 /* Debug */,
+				14B27F812373192B00D78D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		45DC36D32360077D0065D987 /* Build configuration list for PBXProject "Finish-Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

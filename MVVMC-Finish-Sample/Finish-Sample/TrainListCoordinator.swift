@@ -27,6 +27,7 @@ class TrainListCoordinator : Coordinator<UINavigationController> , CoordinatorDe
         let viewModel = TrainListViewModel(trainStoreObj: self.dependency!.trainObj)
 
         let trainListViewController = TrainListViewController(viewModel: viewModel)
+        trainListViewController.title = "TrainList"
         trainListViewController.delegate = self
         self.presenter?.pushViewController(trainListViewController, animated: true)
         self.trainListViewController = trainListViewController

@@ -52,5 +52,85 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E18B93A1-1581-4C55-9026-18E082345249"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finish-Sample/TrainListController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "refreshTableData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AD3D147-A5F5-43C6-B10D-2C3A1F6C1BEB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finish-Sample/TrainListController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "logout()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F6DDD08-ECBE-4A6E-81CD-D5A905509BD4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finish-Sample/TrainListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "triggerDataFetch"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "7F6DDD08-ECBE-4A6E-81CD-D5A905509BD4 - 1cae718ed62807f1"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Finish_Sample.TrainListItem, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Finish_Sample.TrainListViewModel.triggerDataFetch.didset : Swift.Optional&lt;(Finish_Sample.TrainListItem) -&gt; ()&gt;"
+                  moduleName = "Finish-Sample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shine/Documents/project/RxSwift-MVVMC-Practice/MVVMC-Finish-Sample/Finish-Sample/TrainListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "295">
+               </Location>
+               <Location
+                  uuid = "7F6DDD08-ECBE-4A6E-81CD-D5A905509BD4 - 77cf9fb7fc66d45d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Finish_SampleTests.TrainListItem, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Finish_SampleTests.TrainListViewModel.triggerDataFetch.didset : Swift.Optional&lt;(Finish_SampleTests.TrainListItem) -&gt; ()&gt;"
+                  moduleName = "Finish-SampleTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shine/Documents/project/RxSwift-MVVMC-Practice/MVVMC-Finish-Sample/Finish-Sample/TrainListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "295">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

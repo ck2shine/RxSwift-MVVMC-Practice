@@ -12,23 +12,26 @@ class TrainListViewController : UIViewController {
     
     weak var delegate : TrainListViewControllerDelegate?
     
-
-    var viewModel : TrainListViewModel
-
-   init(viewModel : TrainListViewModel) {
-        self.viewModel = viewModel
+    var controller : TrainListController
+    
+    var viewModel : TrainListViewModel{
+        return controller.viewModel
+    }
+    
+    init(viewModel : TrainListViewModel) {
+        self.controller = TrainListController(viewModel: viewModel)
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    //@IBOutlet weak var LogoutButton: UIBarButtonItem! //gone
-    @IBAction func LogOutAction(_ sender: Any) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.replaceToViewControllers(.SignIn)
-    }
+    
+    //@IBOutlet weak var LogoutButton: UIBarButtonItem! //TODO delete
+    //    @IBAction func LogOutAction(_ sender: Any) {
+    //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    //        appDelegate.replaceToViewControllers(.SignIn)
+    //    }
     
     //@IBOutlet weak var dataList: UITableView!//use coding
     
@@ -38,30 +41,33 @@ class TrainListViewController : UIViewController {
         return tableView
     }()
     
+    private lazy var loadActivity:UIActivityIndicatorView = {
+        let activity = UIActivityIndicatorView(style: .gray)
+        return activity
+    }()
+    
     private lazy var logoutBarItem: UIBarButtonItem = {
         let logoutItem = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(LogoutAction(_:)))
         return logoutItem
     }()
-
-    var isFromFirstStackTrainList : Bool = true // no need this variable
     
-    var cellAccessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-
+    //var isFromFirstStackTrainList : Bool = true // no need this variable       
+    
     //we can delete data
     /*
-
-
-
+     
+     
+     
      var trainList : [TrainShowData] = [] { //not form share instance
      didSet{
      self.dataTable.reloadData()// cancel optional Outlet
      }
      }
-
+     
      var trainNo : String?{
      didSet
      {
-
+     
      guard let trainNo = trainNo else {return }
      trainList = TrainStoreObj.shared.trainTimeTable[trainNo] ?? []
      title = "TimeTable : \(trainNo)"
@@ -75,31 +81,70 @@ class TrainListViewController : UIViewController {
         
         layoutViews()
         
-        if !isFromFirstStackTrainList
-        {
-            //self.LogoutButton.isEnabled = false
-            //self.LogoutButton.tintColor = .clear
-        }
         dataBinding()
+        
+        //        if !isFromFirstStackTrainList TODO delete part
+        //        {
+        //            //self.LogoutButton.isEnabled = false
+        //            //self.LogoutButton.tintColor = .clear
+        //        }
+        
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.viewModel.refreshTableData()
+        self.controller.refreshTableData()
+    }
+    
+    deinit {
+        print("TrainList VC has released")
     }
 }
 
 extension TrainListViewController{
     final private func dataBinding(){
-        self.viewModel.dataList.binding(trigger: false, listener: {[unowned self] (dataList) in
+        let outputs = viewModel.outputs
+        
+        outputs.dataList.binding(trigger: false, listener: {[unowned self] (dataList) in
             self.dataTable.reloadData()
+        })
+        
+        outputs.addBarItem.binding(listener: {[unowned self] (itemMode) in
+            if let itemMode = itemMode  {
+                
+                switch itemMode {
+                case .activity:
+                    self.navigationItem.rightBarButtonItem =  UIBarButtonItem(customView: self.loadActivity)
+                case .both:
+                    self.navigationItem.rightBarButtonItems = [ self.logoutBarItem,UIBarButtonItem(customView: self.loadActivity)]
+                default:
+                    self.navigationItem.rightBarButtonItem =  self.logoutBarItem
+                }
+            }
+        })
+        
+        outputs.isLoading.binding( listener: {[unowned self] (loading) in
+            
+            if let loading = loading , loading{
+                self.loadActivity.startAnimating()
+            }
+            else
+            {
+                self.loadActivity.stopAnimating()
+            }
+        })
+        
+        outputs.logout.binding(trigger: false, listener: { (logout) in
+            if let logout = logout , logout{
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.replaceToViewControllers(.SignIn)
+            }
         })
     }
 }
 
 extension TrainListViewController{
     final private func layoutViews(){
-        title = "TrainList"
         //table
         dataTable.backgroundColor = .white
         view.addSubview(dataTable)
@@ -112,14 +157,25 @@ extension TrainListViewController{
         dataTable.delegate = self
         dataTable.dataSource = self
         
-        //baritme
-        navigationItem.rightBarButtonItem = logoutBarItem
+        
+        //        let indicatorItem = UIBarButtonItem(customView: loadActivity)
+        //        print(navigationItem.leftBarButtonItem)
+        //         print(navigationItem.leftBarButtonItems)
+        //        //navigationItem.rightBarButtonItems?.append(indicatorItem)
+        
+        //        view.addSubview(loadActivity)
+        //        view.bringSubviewToFront(loadActivity)
+        //        loadActivity.translatesAutoresizingMaskIntoConstraints = false
+        //        loadActivity.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        //        loadActivity.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        
     }
 }
 
 extension TrainListViewController{
     @objc func LogoutAction(_ sender : UIBarButtonItem){
-        print("log out")
+        self.controller.logout()
     }
 }
 
@@ -130,37 +186,34 @@ extension TrainListViewController : UITableViewDataSource , UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell : UITableViewCell
+        var cell : TrainListViewCell
         
-        if let dequeueCell = tableView.dequeueReusableCell(withIdentifier: "trainListCell"){
+        if let dequeueCell = tableView.dequeueReusableCell(withIdentifier: "trainListCell") as? TrainListViewCell{
             cell = dequeueCell
         }else{
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "trainListCell")
+            cell = TrainListViewCell(style: .subtitle, reuseIdentifier: "trainListCell")
         }
-
+        
         if let viewModel = self.viewModel.dataList.value?[indexPath.row] {
-            cell.textLabel?.text =  viewModel.mainTitle
-            cell.detailTextLabel?.numberOfLines = 0
-            cell.detailTextLabel?.text = viewModel.subTitle
-            cell.accessoryType =  cellAccessoryType // from setting
+            cell.setupCell(viewModel: viewModel)
         }
-
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard isFromFirstStackTrainList else {
-            return
-        }
-
-        //change to delegate to call coordinator TODO
-        if let viewModel = self.viewModel.dataList.value?[indexPath.row] as? TrainInfo{
+        //        guard isFromFirstStackTrainList else { TODO delete part
+        //            return
+        //        }
+        
+        //change to delegate to call coordinator TODO delete part
+        if let viewModel = self.viewModel.originalData?[indexPath.row] as? TrainInfo{
             self.delegate?.didSelectTrainDetail(viewModel)
         }
-
-//        let trainInfoData = self.trainList[indexPath.row];
-//        self.performSegue(withIdentifier: "toTrainDetail", sender: trainInfoData)
+        
+        //        let trainInfoData = self.trainList[indexPath.row];
+        //        self.performSegue(withIdentifier: "toTrainDetail", sender: trainInfoData)
     }
     
 }

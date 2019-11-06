@@ -2,7 +2,7 @@
 //  TrainDataProtocol.swift
 //  Finish-Sample
 //
-//  Created by i9400503 on 2019/11/6.
+//  Created by Shine on 2019/11/6.
 //  Copyright © 2019 BrilleShine. All rights reserved.
 //
 
