@@ -1,0 +1,18 @@
+[
+  {"BranchName" : "Finance-1" , "Dep" : "Finance"} ,
+  {"BranchName" : "Finance-2" , "Dep" : "Finance"} ,
+  {"BranchName" : "Finance-3" , "Dep" : "Finance"} ,
+  {"BranchName" : "Finance-4" , "Dep" : "Finance"} ,
+  {"BranchName" : "Accounting-1" , "Dep" : "Finance"} ,
+  {"BranchName" : "Accounting-2" , "Dep" : "Finance"} ,
+  {"BranchName" : "Accounting-3" , "Dep" : "Finance"} ,
+  {"BranchName" : "Resource" , "Dep" : "HR"} ,
+  {"BranchName" : "Relation" , "Dep" : "HR"} ,
+  {"BranchName" : "Salary" , "Dep" : "HR"} ,
+  {"BranchName" : "BackEnd-1" , "Dep" : "IT_Dept"} ,
+  {"BranchName" : "BackEnd-2" , "Dep" : "IT_Dept"} ,
+  {"BranchName" : "BackEnd-3" , "Dep" : "IT_Dept"} ,
+  {"BranchName" : "FrontEnd-1" , "Dep" : "IT_Dept"} ,
+  {"BranchName" : "FrontEnd-2" , "Dep" : "IT_Dept"} 
+
+]

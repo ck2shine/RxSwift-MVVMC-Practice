@@ -1,0 +1,56 @@
+# Xcode
+#
+RxSwift-Sample/build/
+RxSwift-Sample/Build/
+RxSwift-Sample/*.pbxuser
+RxSwift-Sample/!default.pbxuser
+RxSwift-Sample/*.mode1v3
+RxSwift-Sample/!default.mode1v3
+RxSwift-Sample/*.mode2v3
+RxSwift-Sample/!default.mode2v3
+RxSwift-Sample/*.perspectivev3
+RxSwift-Sample/!default.perspectivev3
+RxSwift-Sample/xcuserdata
+RxSwift-Sample/*.xccheckout
+RxSwift-Sample/*.moved-aside
+RxSwift-Sample/DerivedData
+RxSwift-Sample/*.hmap
+RxSwift-Sample/*.ipa
+RxSwift-Sample/*.xcuserstate
+RxSwift-Sample/*.o
+
+timeline.xctimeline
+.vscode
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
+#
+# Pods/
+
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+RxSwift-Sample/Carthage
+
+# Various
+
+.DS_Store
+
+
+# Linux
+
+*.swp
+*.swo
+
+# Swift Package Manager
+
+.build/
+Packages/
+
+# AppCode
+
+.idea
