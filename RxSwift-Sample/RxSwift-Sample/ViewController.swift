@@ -16,15 +16,22 @@ class ViewController: UIViewController {
     var jsonSingle : Single<[Department]>?
     var jsonCompletable : Completable?
     var jsonMaybe : Maybe<[Department]>?
+
     let disposeBag = DisposeBag()
 
+    var testString :String = ""
+
+    @IBOutlet weak var TestButton: UIButton!
     @IBOutlet weak var InputTextField: UITextField!
     
     @IBOutlet weak var InputValidLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.RxBinding()
+       
+        //self.RxBinding()
+      
+        
+        self.RxObserver_eventSubscrite()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -113,6 +120,7 @@ extension ViewController {
         //jsonSingle = getDeptNormal().asSingle()
         //        jsonSingle = getDeptSingle()
         jsonCompletable = getDelpComplete()
+       let event =  InputTextField.rx.text
     }
 }
 //MARK: event

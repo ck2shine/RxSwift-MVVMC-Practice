@@ -21,6 +21,7 @@
 		45A4B37A23BF0BE400DA539C /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45A4B37423BF0BE400DA539C /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45A4B37D23BF129D00DA539C /* dept.json in Resources */ = {isa = PBXBuildFile; fileRef = 45A4B37C23BF129D00DA539C /* dept.json */; };
 		45A4B37F23BF13A200DA539C /* Depts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B37E23BF13A200DA539C /* Depts.swift */; };
+		45AA353723C713FE0090AA25 /* RxObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AA353623C713FE0090AA25 /* RxObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,7 @@
 		45A4B37423BF0BE400DA539C /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		45A4B37C23BF129D00DA539C /* dept.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dept.json; sourceTree = "<group>"; };
 		45A4B37E23BF13A200DA539C /* Depts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Depts.swift; sourceTree = "<group>"; };
+		45AA353623C713FE0090AA25 /* RxObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		45A4B35C23BF099D00DA539C /* RxSwift-Sample */ = {
 			isa = PBXGroup;
 			children = (
+				45AA353523C7128A0090AA25 /* Observer */,
 				45A4B37E23BF13A200DA539C /* Depts.swift */,
 				45A4B37C23BF129D00DA539C /* dept.json */,
 				45A4B35D23BF099D00DA539C /* AppDelegate.swift */,
@@ -110,6 +113,14 @@
 				45A4B37223BF0BE400DA539C /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45AA353523C7128A0090AA25 /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				45AA353623C713FE0090AA25 /* RxObserver.swift */,
+			);
+			path = Observer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A4B36223BF099D00DA539C /* ViewController.swift in Sources */,
+				45AA353723C713FE0090AA25 /* RxObserver.swift in Sources */,
 				45A4B35E23BF099D00DA539C /* AppDelegate.swift in Sources */,
 				45A4B37F23BF13A200DA539C /* Depts.swift in Sources */,
 				45A4B36023BF099D00DA539C /* SceneDelegate.swift in Sources */,
