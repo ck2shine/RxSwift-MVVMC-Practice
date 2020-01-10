@@ -38,6 +38,12 @@ extension ViewController{
 
     final private func asyncObject(){
         let subject = AsyncSubject<String>()
-        subject.subscribe(onNext: <#T##((String) -> Void)?##((String) -> Void)?##(String) -> Void#>, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        subject.subscribe { (event) in
+            print(event)
+        }
+        subject.onNext("😝")
+        subject.onNext("😫")
+        subject.onNext("🥵")
+        subject.onCompleted()
     }
 }
