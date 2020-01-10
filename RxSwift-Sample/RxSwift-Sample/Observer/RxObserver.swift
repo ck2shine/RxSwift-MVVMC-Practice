@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import UIKit
 /*
  TestButton
  InputValidLabel
@@ -16,8 +17,9 @@ import RxCocoa
  */
 extension ViewController {
     func RxObserver_eventSubscrite(){
-        eventNormal()
-        eventAnyObserver()
+        //eventNormal()
+        //eventAnyObserver()
+//        binder()
     }
 }
 extension ViewController{
@@ -51,21 +53,28 @@ extension ViewController{
             .subscribe(observer)
             .disposed(by: disposeBag)
 
-//        let labelObserver : AnyObserver<Bool> = AnyObserver {[weak self] (event) in
-//            guard let self = self else {return}
-//            switch event{
-//            case .next(let isHidden) :
-//                self.InputValidLabel.isHidden = isHidden
-//            default :
-//                break
-//            }
-//        }
-//        InputTextField.rx.text.map { $0?.count ?? 0  > 0}
-//            .subscribe(labelObserver)
-//            .disposed(by: disposeBag)
-
-
         InputTextField.rx.text.map { $0?.count ?? 0  > 0}.bind(to:  self.InputValidLabel.rx.isHidden).disposed(by: disposeBag)
         
     }
+
+    final private func binder(){
+        //observer
+        let binder : Binder<Bool> = Binder(InputValidLabel) { (label, bindValue) in
+            label.isHidden = bindValue
+        }
+        InputTextField.rx.text
+            .map { $0?.count ?? 0  > 0}
+            .bind(to: binder)
+            .disposed(by: disposeBag)
+    }
+
+   
 }
+
+//extension Reactive where Base:UIView{
+//    public var isHidden : Binder<Bool>{
+//        return Binder(self.base) { (view, hidden) in
+//            view.isHidden = hidden
+//        }
+//    }
+//}

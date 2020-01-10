@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     var jsonSingle : Single<[Department]>?
     var jsonCompletable : Completable?
     var jsonMaybe : Maybe<[Department]>?
-
+    var driverSignal : Driver<Void>?
+    var jsonSignal : Signal<Void>?
     let disposeBag = DisposeBag()
 
     var testString :String = ""
@@ -24,16 +25,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var TestButton: UIButton!
     @IBOutlet weak var InputTextField: UITextField!
     
+    @IBOutlet weak var EventButton: UIButton!
+    @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var InputValidLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
        
         //self.RxBinding()
-      
+
+
+        //self.RxObserver_eventSubscrite()
         
-        self.RxObserver_eventSubscrite()
+        RxObservalAndObserver()
     }
 
+    @IBAction func eventAction(_ sender: Any) {
+        jsonSignal?.emit(onNext: { _ in
+            print("kkkkkkk")
+        })
+
+//        driverSignal?.drive(onNext: { (_) in
+//            print("akakakakakak")
+//        })
+
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.global().asyncAfter(deadline: .now() + 2.5) {
@@ -86,18 +101,18 @@ extension ViewController {
 
     private func RxBinding(){
         //make observable object
-        let textObs = InputTextField.rx.text.orEmpty.asObservable()
-
-        //make another obserable<Bool>
-        let idValid = textObs.map {$0.count > 0}
-
-        //make observer event
-        let observer = InputValidLabel.rx.isHidden
-
-        let disposable = idValid
-            .subscribeOn(MainScheduler.instance)
-            .observeOn(MainScheduler.instance)
-            .bind(to: observer)
+//        let textObs = InputTextField.rx.text.orEmpty.asObservable()
+//
+//        //make another obserable<Bool>
+//        let idValid = textObs.map {$0.count > 0}
+//
+//        //make observer event
+//        let observer = InputValidLabel.rx.isHidden
+//
+//        let disposable = idValid
+//            .subscribeOn(MainScheduler.instance)
+//            .observeOn(MainScheduler.instance)
+//            .bind(to: observer)
 
         //create one observe
         let numbers : Observable<Int> = Observable.create({ (observe) -> Disposable in
@@ -120,7 +135,38 @@ extension ViewController {
         //jsonSingle = getDeptNormal().asSingle()
         //        jsonSingle = getDeptSingle()
         jsonCompletable = getDelpComplete()
-       let event =  InputTextField.rx.text
+
+        jsonSignal = TestButton.rx.tap.asSignal()
+
+//        driverSignal = TestButton.rx.tap.asDriver()
+//
+//        driverSignal?.drive(onNext: { (_) in
+//            print("drive 1111")
+//        })
+
+        jsonSignal?.emit(onNext: {  _  in
+             print("ccccc")
+            })
+
+//        let event =  InputTextField.rx.text.asDriver()
+//        event.map {"\($0?.count ?? 0)"}
+//             .drive(NameLabel.rx.text)
+//        .disposed(by: disposeBag)
+//
+//        event.map{$0?.count ?? 0 > 0 }
+//            .drive(InputValidLabel.rx.isHidden)
+//        .disposed(by: disposeBag)
+
+
+//        let event =  InputTextField.rx.text.as
+//               event.map {"\($0?.count ?? 0)"}
+//                    .drive(NameLabel.rx.text)
+//               .disposed(by: disposeBag)
+//
+//               event.map{$0?.count ?? 0 > 0 }
+//                   .drive(InputValidLabel.rx.isHidden)
+//               .disposed(by: disposeBag)
+
     }
 }
 //MARK: event

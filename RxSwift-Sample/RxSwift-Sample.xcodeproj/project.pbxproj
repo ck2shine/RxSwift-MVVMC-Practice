@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4518091D23C874BA004AA7F5 /* RxObservalObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4518091C23C874BA004AA7F5 /* RxObservalObserver.swift */; };
 		45A4B35E23BF099D00DA539C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B35D23BF099D00DA539C /* AppDelegate.swift */; };
 		45A4B36023BF099D00DA539C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B35F23BF099D00DA539C /* SceneDelegate.swift */; };
 		45A4B36223BF099D00DA539C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B36123BF099D00DA539C /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4518091C23C874BA004AA7F5 /* RxObservalObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObservalObserver.swift; sourceTree = "<group>"; };
 		45A4B35A23BF099D00DA539C /* RxSwift-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A4B35D23BF099D00DA539C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A4B35F23BF099D00DA539C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				45AA353623C713FE0090AA25 /* RxObserver.swift */,
+				4518091C23C874BA004AA7F5 /* RxObservalObserver.swift */,
 			);
 			path = Observer;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A4B36223BF099D00DA539C /* ViewController.swift in Sources */,
+				4518091D23C874BA004AA7F5 /* RxObservalObserver.swift in Sources */,
 				45AA353723C713FE0090AA25 /* RxObserver.swift in Sources */,
 				45A4B35E23BF099D00DA539C /* AppDelegate.swift in Sources */,
 				45A4B37F23BF13A200DA539C /* Depts.swift in Sources */,
