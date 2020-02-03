@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var jsonMaybe : Maybe<[Department]>?
     var driverSignal : Driver<Void>?
     var jsonSignal : Signal<Void>?
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
 
     var testString :String = ""
 
@@ -31,14 +31,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        //self.RxBinding()
+        self.RxBinding()
 
 
-        //self.RxObserver_eventSubscrite()
+       //self.RxObserver_eventSubscrite()
         
-        RxObservalAndObserver()
+        //RxObservalAndObserver()
+        //RxOperator()
+        
     }
-
+    @IBAction func clearAction(_ sender: Any) {
+        self.disposeBag = DisposeBag()
+    }
+    
     @IBAction func eventAction(_ sender: Any) {
         jsonSignal?.emit(onNext: { _ in
             print("kkkkkkk")
@@ -136,7 +141,7 @@ extension ViewController {
         //        jsonSingle = getDeptSingle()
         jsonCompletable = getDelpComplete()
 
-        jsonSignal = TestButton.rx.tap.asSignal()
+
 
 //        driverSignal = TestButton.rx.tap.asDriver()
 //
@@ -144,9 +149,11 @@ extension ViewController {
 //            print("drive 1111")
 //        })
 
+        jsonSignal = TestButton.rx.tap.asSignal()
+
         jsonSignal?.emit(onNext: {  _  in
              print("ccccc")
-            })
+            }).disposed(by: disposeBag)
 
 //        let event =  InputTextField.rx.text.asDriver()
 //        event.map {"\($0?.count ?? 0)"}

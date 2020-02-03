@@ -62,6 +62,8 @@ extension ViewController{
         let binder : Binder<Bool> = Binder(InputValidLabel) { (label, bindValue) in
             label.isHidden = bindValue
         }
+        //  InputValidLabel.rx.isHidden
+
         InputTextField.rx.text
             .map { $0?.count ?? 0  > 0}
             .bind(to: binder)

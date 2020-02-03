@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45157A5D23E8107300612CB1 /* RxOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45157A5C23E8107300612CB1 /* RxOperator.swift */; };
+		45157A5F23E81EB800612CB1 /* RxDisposebag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45157A5E23E81EB800612CB1 /* RxDisposebag.swift */; };
+		45157A6123E8216D00612CB1 /* RxScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45157A6023E8216D00612CB1 /* RxScheduler.swift */; };
 		4518091D23C874BA004AA7F5 /* RxObservalObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4518091C23C874BA004AA7F5 /* RxObservalObserver.swift */; };
 		45A4B35E23BF099D00DA539C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B35D23BF099D00DA539C /* AppDelegate.swift */; };
 		45A4B36023BF099D00DA539C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B35F23BF099D00DA539C /* SceneDelegate.swift */; };
@@ -42,6 +45,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		45157A5C23E8107300612CB1 /* RxOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxOperator.swift; sourceTree = "<group>"; };
+		45157A5E23E81EB800612CB1 /* RxDisposebag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDisposebag.swift; sourceTree = "<group>"; };
+		45157A6023E8216D00612CB1 /* RxScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxScheduler.swift; sourceTree = "<group>"; };
 		4518091C23C874BA004AA7F5 /* RxObservalObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObservalObserver.swift; sourceTree = "<group>"; };
 		45A4B35A23BF099D00DA539C /* RxSwift-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A4B35D23BF099D00DA539C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +128,9 @@
 			children = (
 				45AA353623C713FE0090AA25 /* RxObserver.swift */,
 				4518091C23C874BA004AA7F5 /* RxObservalObserver.swift */,
+				45157A5C23E8107300612CB1 /* RxOperator.swift */,
+				45157A5E23E81EB800612CB1 /* RxDisposebag.swift */,
+				45157A6023E8216D00612CB1 /* RxScheduler.swift */,
 			);
 			path = Observer;
 			sourceTree = "<group>";
@@ -199,7 +208,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45157A5F23E81EB800612CB1 /* RxDisposebag.swift in Sources */,
+				45157A6123E8216D00612CB1 /* RxScheduler.swift in Sources */,
 				45A4B36223BF099D00DA539C /* ViewController.swift in Sources */,
+				45157A5D23E8107300612CB1 /* RxOperator.swift in Sources */,
 				4518091D23C874BA004AA7F5 /* RxObservalObserver.swift in Sources */,
 				45AA353723C713FE0090AA25 /* RxObserver.swift in Sources */,
 				45A4B35E23BF099D00DA539C /* AppDelegate.swift in Sources */,
