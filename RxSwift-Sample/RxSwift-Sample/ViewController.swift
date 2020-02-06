@@ -18,6 +18,10 @@ class ViewController: UIViewController {
     var jsonMaybe : Maybe<[Department]>?
     var driverSignal : Driver<Void>?
     var jsonSignal : Signal<Void>?
+
+    var publicObservable : Observable<String>?
+    var scheduleObservable : Observable<String>?
+
     var disposeBag = DisposeBag()
 
     var testString :String = ""
@@ -30,28 +34,52 @@ class ViewController: UIViewController {
     @IBOutlet weak var InputValidLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        self.RxBinding()
+
+        //self.RxBinding()
 
 
-       //self.RxObserver_eventSubscrite()
+        //self.RxObserver_eventSubscrite()
         
         //RxObservalAndObserver()
         //RxOperator()
+
+        //RxScheduler()
+        //RxErrorHandler()
+        RxCreateObservable()
         
+    }
+    @IBOutlet weak var TestCatchErrorBtn: UIButton!
+    @IBAction func testCatchError(_ sender: Any) {
+
+        self.publicObservable!.subscribe(onNext: { (str) in
+                               print("third subscribe :\(str)")
+                           })
+                     .disposed(by: self.disposeBag)
+
     }
     @IBAction func clearAction(_ sender: Any) {
         self.disposeBag = DisposeBag()
     }
     
     @IBAction func eventAction(_ sender: Any) {
-        jsonSignal?.emit(onNext: { _ in
-            print("kkkkkkk")
-        })
 
-//        driverSignal?.drive(onNext: { (_) in
-//            print("akakakakakak")
-//        })
+        scheduleObservable?
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { (str) in
+                print(str)
+            }).disposed(by: self.disposeBag)
+
+
+
+
+        //        jsonSignal?.emit(onNext: { _ in
+        //            print("kkkkkkk")
+        //        })
+
+        //        driverSignal?.drive(onNext: { (_) in
+        //            print("akakakakakak")
+        //        })
 
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -83,8 +111,8 @@ class ViewController: UIViewController {
                 },onError: {
                     print("json fail \($0.localizedDescription)")
                 },onCompleted: {
-                print("complete")
-            })
+                    print("complete")
+                })
         }
 
 
@@ -106,18 +134,18 @@ extension ViewController {
 
     private func RxBinding(){
         //make observable object
-//        let textObs = InputTextField.rx.text.orEmpty.asObservable()
-//
-//        //make another obserable<Bool>
-//        let idValid = textObs.map {$0.count > 0}
-//
-//        //make observer event
-//        let observer = InputValidLabel.rx.isHidden
-//
-//        let disposable = idValid
-//            .subscribeOn(MainScheduler.instance)
-//            .observeOn(MainScheduler.instance)
-//            .bind(to: observer)
+        //        let textObs = InputTextField.rx.text.orEmpty.asObservable()
+        //
+        //        //make another obserable<Bool>
+        //        let idValid = textObs.map {$0.count > 0}
+        //
+        //        //make observer event
+        //        let observer = InputValidLabel.rx.isHidden
+        //
+        //        let disposable = idValid
+        //            .subscribeOn(MainScheduler.instance)
+        //            .observeOn(MainScheduler.instance)
+        //            .bind(to: observer)
 
         //create one observe
         let numbers : Observable<Int> = Observable.create({ (observe) -> Disposable in
@@ -143,36 +171,36 @@ extension ViewController {
 
 
 
-//        driverSignal = TestButton.rx.tap.asDriver()
-//
-//        driverSignal?.drive(onNext: { (_) in
-//            print("drive 1111")
-//        })
+        //        driverSignal = TestButton.rx.tap.asDriver()
+        //
+        //        driverSignal?.drive(onNext: { (_) in
+        //            print("drive 1111")
+        //        })
 
         jsonSignal = TestButton.rx.tap.asSignal()
 
         jsonSignal?.emit(onNext: {  _  in
-             print("ccccc")
-            }).disposed(by: disposeBag)
+            print("ccccc")
+        }).disposed(by: disposeBag)
 
-//        let event =  InputTextField.rx.text.asDriver()
-//        event.map {"\($0?.count ?? 0)"}
-//             .drive(NameLabel.rx.text)
-//        .disposed(by: disposeBag)
-//
-//        event.map{$0?.count ?? 0 > 0 }
-//            .drive(InputValidLabel.rx.isHidden)
-//        .disposed(by: disposeBag)
+        //        let event =  InputTextField.rx.text.asDriver()
+        //        event.map {"\($0?.count ?? 0)"}
+        //             .drive(NameLabel.rx.text)
+        //        .disposed(by: disposeBag)
+        //
+        //        event.map{$0?.count ?? 0 > 0 }
+        //            .drive(InputValidLabel.rx.isHidden)
+        //        .disposed(by: disposeBag)
 
 
-//        let event =  InputTextField.rx.text.as
-//               event.map {"\($0?.count ?? 0)"}
-//                    .drive(NameLabel.rx.text)
-//               .disposed(by: disposeBag)
-//
-//               event.map{$0?.count ?? 0 > 0 }
-//                   .drive(InputValidLabel.rx.isHidden)
-//               .disposed(by: disposeBag)
+        //        let event =  InputTextField.rx.text.as
+        //               event.map {"\($0?.count ?? 0)"}
+        //                    .drive(NameLabel.rx.text)
+        //               .disposed(by: disposeBag)
+        //
+        //               event.map{$0?.count ?? 0 > 0 }
+        //                   .drive(InputValidLabel.rx.isHidden)
+        //               .disposed(by: disposeBag)
 
     }
 }

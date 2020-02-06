@@ -16,8 +16,72 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
-            landmarkName = "asyncObject()"
+            landmarkName = "observableAndObserver()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77694F9B-DBC4-42E2-9EEA-C57F02B36DD8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift-Sample/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "testCatchError(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D76646C2-95B8-4199-942A-DD7B9D395FB3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift-Sample/Observer/RxErrorHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "reTry()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D76646C2-95B8-4199-942A-DD7B9D395FB3 - bb6d2cb5034b48c4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RxSwift_Sample.ViewController.reTry() -&gt; ()"
+                  moduleName = "RxSwift-Sample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/i9400503/Documents/internetProject/RxSwift-MVVMC-Practice/RxSwift-Sample/RxSwift-Sample/Observer/RxErrorHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  uuid = "D76646C2-95B8-4199-942A-DD7B9D395FB3 - 41d1ec9dff7509db"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.AnyObserver&lt;Swift.Int&gt;) -&gt; RxSwift.Disposable in RxSwift_Sample.ViewController.reTry() -&gt; ()"
+                  moduleName = "RxSwift-Sample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/i9400503/Documents/internetProject/RxSwift-MVVMC-Practice/RxSwift-Sample/RxSwift-Sample/Observer/RxErrorHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
