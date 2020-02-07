@@ -83,13 +83,29 @@
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GFl-3Y-VFd">
+                                <rect key="frame" x="20" y="504" width="374" height="338"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Jub-Vf-8Ye">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="37"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBB-tM-FXg">
+                                        <rect key="frame" x="0.0" y="37" width="374" height="301"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tuI-bQ-WnH" secondAttribute="trailing" constant="20" id="0NN-5y-Veg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GFl-3Y-VFd" secondAttribute="trailing" constant="20" id="89G-oB-hJf"/>
                             <constraint firstItem="tuI-bQ-WnH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ess-5s-zKh"/>
+                            <constraint firstItem="GFl-3Y-VFd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HES-Nv-OQ9"/>
                             <constraint firstItem="tuI-bQ-WnH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aYE-1l-yFT"/>
+                            <constraint firstItem="GFl-3Y-VFd" firstAttribute="top" secondItem="tuI-bQ-WnH" secondAttribute="bottom" constant="20" id="acl-lT-Z61"/>
                             <constraint firstItem="tuI-bQ-WnH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="i9b-Og-enh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GFl-3Y-VFd" secondAttribute="bottom" constant="20" id="k5m-r9-RQ6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -100,6 +116,8 @@
                         <outlet property="NameLabel" destination="lfA-LW-nrC" id="GL3-ef-HVS"/>
                         <outlet property="TestButton" destination="GKf-C6-lOo" id="ICx-vp-Ihf"/>
                         <outlet property="TestCatchErrorBtn" destination="GKf-C6-lOo" id="a7n-BU-Lgj"/>
+                        <outlet property="dataActivity" destination="Jub-Vf-8Ye" id="G3e-RP-IJ0"/>
+                        <outlet property="loadingButton" destination="PBB-tM-FXg" id="Of5-Ts-ESY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

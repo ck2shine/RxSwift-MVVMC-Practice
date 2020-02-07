@@ -45,16 +45,43 @@ class ViewController: UIViewController {
 
         //RxScheduler()
         //RxErrorHandler()
-        RxCreateObservable()
-        
+//        RxCreateObservable()
+        startToTest()
     }
+    private let items = BehaviorRelay<[String]>(value: [])
+    var loading = BehaviorRelay<Bool>(value: false)
+
+    @IBOutlet weak var dataActivity: UIActivityIndicatorView!
+
+    @IBOutlet weak var loadingButton: UIButton!
+
+    func startToTest(){
+
+        items.map{_ in true}
+            .bind(to: loading)
+            .disposed(by: disposeBag)
+
+        loading.asDriver(onErrorJustReturn: false)
+            .map{!$0}
+            .drive(loadingButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+
+        loading.asDriver(onErrorJustReturn: false)
+            .drive(dataActivity.rx.isAnimating)
+            .disposed(by: disposeBag)
+
+
+    }
+
     @IBOutlet weak var TestCatchErrorBtn: UIButton!
     @IBAction func testCatchError(_ sender: Any) {
 
-        self.publicObservable!.subscribe(onNext: { (str) in
-                               print("third subscribe :\(str)")
-                           })
-                     .disposed(by: self.disposeBag)
+
+        items.accept(["123"])
+//        self.publicObservable!.subscribe(onNext: { (str) in
+//            print("third subscribe :\(str)")
+//        })
+//            .disposed(by: self.disposeBag)
 
     }
     @IBAction func clearAction(_ sender: Any) {
