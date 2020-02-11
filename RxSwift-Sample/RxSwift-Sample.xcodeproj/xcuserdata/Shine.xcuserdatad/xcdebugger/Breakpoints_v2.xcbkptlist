@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D03C4B3D-EEA2-44D4-98D6-4FA53D435DE2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "972DA730-2FD8-4397-A5E0-20BD063D7A8E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift-Sample/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "testCatchError(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72C6667E-8869-4E24-B2E9-E6771153B631"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift-Sample/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "normalBinding()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "72C6667E-8869-4E24-B2E9-E6771153B631 - 2aaacff8dbeaa80f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RxSwift_Sample.ViewController.normalBinding() -&gt; ()"
+                  moduleName = "RxSwift-Sample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shine/Documents/project/RxSwift-MVVMC-Practice/RxSwift-Sample/RxSwift-Sample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  uuid = "72C6667E-8869-4E24-B2E9-E6771153B631 - dc18ddffbf6193b8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift_Sample.ViewController.DataError) -&gt; Swift.String in RxSwift_Sample.ViewController.normalBinding() -&gt; ()"
+                  moduleName = "RxSwift-Sample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shine/Documents/project/RxSwift-MVVMC-Practice/RxSwift-Sample/RxSwift-Sample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD2B3C8B-5B2F-4BD0-98B1-A7F50AEC1545"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift-Sample/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "normalBinding()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "252D543B-860F-453E-8170-3111BD52429D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift-Sample/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "normalBinding()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "719AC1A0-6171-48F8-997F-D11A7790E47A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift-Sample/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "errorEvent"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "719AC1A0-6171-48F8-997F-D11A7790E47A - a3f1eb91eed81eb2"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RxSwift_Sample.ViewController.errorEvent.getter : RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;"
+                  moduleName = "RxSwift-Sample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shine/Documents/project/RxSwift-MVVMC-Practice/RxSwift-Sample/RxSwift-Sample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "22">
+               </Location>
+               <Location
+                  uuid = "719AC1A0-6171-48F8-997F-D11A7790E47A - 83260c4a4a49181a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Error) -&gt; Swift.String in RxSwift_Sample.ViewController.errorEvent.getter : RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;"
+                  moduleName = "RxSwift-Sample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shine/Documents/project/RxSwift-MVVMC-Practice/RxSwift-Sample/RxSwift-Sample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CE16A19-2C7A-441A-A30A-60EFA0570888"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift-Sample/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "clearAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD5CC791-9434-4955-AE66-94AA74596E6A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift-Sample/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "eventAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EBECA4AE-7A67-4FC7-881E-B847D09AC75B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift-Sample/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "startToTest()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EBECA4AE-7A67-4FC7-881E-B847D09AC75B - 191b6a7ca8655566"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.AnyObserver&lt;Swift.Array&lt;Swift.String&gt;&gt;) -&gt; RxSwift.Disposable in closure #1 (()) -&gt; RxSwift.Observable&lt;Swift.Array&lt;Swift.String&gt;&gt; in RxSwift_Sample.ViewController.startToTest() -&gt; ()"
+                  moduleName = "RxSwift-Sample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shine/Documents/project/RxSwift-MVVMC-Practice/RxSwift-Sample/RxSwift-Sample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "317">
+               </Location>
+               <Location
+                  uuid = "EBECA4AE-7A67-4FC7-881E-B847D09AC75B - c9503d28d7ecfb3e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (RxSwift.AnyObserver&lt;Swift.Array&lt;Swift.String&gt;&gt;) -&gt; RxSwift.Disposable in closure #1 (()) -&gt; RxSwift.Observable&lt;Swift.Array&lt;Swift.String&gt;&gt; in RxSwift_Sample.ViewController.startToTest() -&gt; ()"
+                  moduleName = "RxSwift-Sample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shine/Documents/project/RxSwift-MVVMC-Practice/RxSwift-Sample/RxSwift-Sample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B30C720C-1916-454F-93A9-1B8F818B3927"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift-Sample/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "startToTest()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B30C720C-1916-454F-93A9-1B8F818B3927 - 44f2e66bbf8a15ba"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RxSwift_Sample.ViewController.startToTest() -&gt; ()"
+                  moduleName = "RxSwift-Sample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shine/Documents/project/RxSwift-MVVMC-Practice/RxSwift-Sample/RxSwift-Sample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "B30C720C-1916-454F-93A9-1B8F818B3927 - 1672dc99137db79c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (()) -&gt; RxSwift.Observable&lt;Swift.Array&lt;Swift.String&gt;&gt; in RxSwift_Sample.ViewController.startToTest() -&gt; ()"
+                  moduleName = "RxSwift-Sample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shine/Documents/project/RxSwift-MVVMC-Practice/RxSwift-Sample/RxSwift-Sample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "14">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
