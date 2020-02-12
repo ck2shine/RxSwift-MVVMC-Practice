@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 import RxSwift
 extension ViewController{
+    
     func RxDisposebag(){
+        
+        //assign a new DisposeBag to clean
         self.disposeBag = DisposeBag()
     }
+    
 }

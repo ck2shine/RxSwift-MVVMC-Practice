@@ -11,6 +11,7 @@ import RxCocoa
 import RxSwift
 class ViewController: UIViewController {
     
+
     typealias JSON = [Department]
     
     var errorObject = PublishSubject<DataError>()
@@ -54,8 +55,44 @@ class ViewController: UIViewController {
         //RxScheduler()
         //RxErrorHandler()
         //        RxCreateObservable()
-        startToTest()
+//        startToTest()
         //normalBinding()
+//        PublishRelays()
+//        share()
+        twoWayInputs()
+    }
+    
+    var inputRelay = BehaviorRelay<String>(value: "")
+    
+    
+    func twoWayInputs(){
+        //from viewmodel to ui
+             
+    
+        InputTextField.rx.text.filter({ (str) -> Bool in
+            print("see str \(str!)")
+            return !(str?.isEmpty ?? true)
+        }).subscribe(onNext: { (str) in
+            print("CCcc")
+            }).disposed(by: disposeBag)
+        
+        inputRelay.asObservable()
+                               .bind(to: InputTextField.rx.text)
+                           .disposed(by: disposeBag)
+      
+        inputRelay.accept("Shineccc")
+       
+        
+        //input
+        
+        
+//        InputTextField.rx.text.orEmpty.bind(to: inputRelay).disposed(by: disposeBag)
+                      
+      
+//        inputRelay.accept("Shine")
+        
+        //load data
+//        inputRelay.accept("Shine")
     }
     
     func normalBinding(){
@@ -108,7 +145,7 @@ class ViewController: UIViewController {
         }.catchErrorJustReturn(["errror"])
             .share()
         
-        //write item
+        //write item and reload table
         items.filter{!$0.isEmpty}
               .flatMapLatest{item in
                   return Observable<Bool>.create({ event  in
@@ -118,7 +155,7 @@ class ViewController: UIViewController {
                            event.onNext(true)
                            event.onCompleted()
                       }
-                     
+
                       return Disposables.create()
                   })
           }
@@ -138,10 +175,12 @@ class ViewController: UIViewController {
         isLoading
             .drive(dataActivity.rx.isAnimating)
             .disposed(by: disposeBag)
-        
+        //behavior has a default value
         BehaviorRelay.merge( syncData.map{_ in
             print("cccccc sync")
-            return false},  items.map{_ in true}
+            return false},  items.map{_ in
+                print("hey hey hey")
+                return true}
             .asObservable()
         )
             .bind(to: loading)
@@ -161,7 +200,8 @@ class ViewController: UIViewController {
         
     }
     @IBAction func clearAction(_ sender: Any) {
-        self.disposeBag = DisposeBag()
+//        print(inputRelay.value)
+//        self.disposeBag = DisposeBag()
     }
     
     @IBAction func eventAction(_ sender: Any) {

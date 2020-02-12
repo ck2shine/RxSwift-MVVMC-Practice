@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14445E9D23F44346002CC8E2 /* RxRelays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14445E9C23F44346002CC8E2 /* RxRelays.swift */; };
 		45157A5D23E8107300612CB1 /* RxOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45157A5C23E8107300612CB1 /* RxOperator.swift */; };
 		45157A5F23E81EB800612CB1 /* RxDisposebag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45157A5E23E81EB800612CB1 /* RxDisposebag.swift */; };
 		45157A6123E8216D00612CB1 /* RxScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45157A6023E8216D00612CB1 /* RxScheduler.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		14445E9C23F44346002CC8E2 /* RxRelays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxRelays.swift; sourceTree = "<group>"; };
 		45157A5C23E8107300612CB1 /* RxOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxOperator.swift; sourceTree = "<group>"; };
 		45157A5E23E81EB800612CB1 /* RxDisposebag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDisposebag.swift; sourceTree = "<group>"; };
 		45157A6023E8216D00612CB1 /* RxScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxScheduler.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				45157A5E23E81EB800612CB1 /* RxDisposebag.swift */,
 				45157A6023E8216D00612CB1 /* RxScheduler.swift */,
 				454E1E1723E93E7000986F3D /* RxErrorHandler.swift */,
+				14445E9C23F44346002CC8E2 /* RxRelays.swift */,
 			);
 			path = Observer;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				45157A5F23E81EB800612CB1 /* RxDisposebag.swift in Sources */,
 				45157A6123E8216D00612CB1 /* RxScheduler.swift in Sources */,
 				45A4B36223BF099D00DA539C /* ViewController.swift in Sources */,
+				14445E9D23F44346002CC8E2 /* RxRelays.swift in Sources */,
 				45157A5D23E8107300612CB1 /* RxOperator.swift in Sources */,
 				4518091D23C874BA004AA7F5 /* RxObservalObserver.swift in Sources */,
 				45AA353723C713FE0090AA25 /* RxObserver.swift in Sources */,

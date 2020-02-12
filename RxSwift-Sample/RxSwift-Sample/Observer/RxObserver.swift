@@ -68,15 +68,19 @@ extension ViewController{
             .map { $0?.count ?? 0  > 0}
             .bind(to: binder)
             .disposed(by: disposeBag)
+        
+        //it`s a common binder with UILabel
+        _ = NameLabel.rx.isHidden
+        
     }
 
-   
+    
 }
 
-//extension Reactive where Base:UIView{
-//    public var isHidden : Binder<Bool>{
-//        return Binder(self.base) { (view, hidden) in
-//            view.isHidden = hidden
-//        }
-//    }
-//}
+extension Reactive where Base:UIView{
+    public var isHidden : Binder<Bool>{
+        return Binder(self.base) { (view, hidden) in
+            view.isHidden = hidden
+        }
+    }
+}
