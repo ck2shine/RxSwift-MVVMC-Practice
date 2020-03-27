@@ -14,6 +14,8 @@
 		4518091D23C874BA004AA7F5 /* RxObservalObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4518091C23C874BA004AA7F5 /* RxObservalObserver.swift */; };
 		454E1E1823E93E7000986F3D /* RxErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E1E1723E93E7000986F3D /* RxErrorHandler.swift */; };
 		454E1E1B23E9583900986F3D /* RxCreateObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E1E1A23E9583900986F3D /* RxCreateObservable.swift */; };
+		4564960723FD21AB00C6914A /* RxBiBinding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4564960623FD21AB00C6914A /* RxBiBinding.framework */; };
+		4564960823FD21AB00C6914A /* RxBiBinding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4564960623FD21AB00C6914A /* RxBiBinding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45A4B35E23BF099D00DA539C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B35D23BF099D00DA539C /* AppDelegate.swift */; };
 		45A4B36023BF099D00DA539C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B35F23BF099D00DA539C /* SceneDelegate.swift */; };
 		45A4B36223BF099D00DA539C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B36123BF099D00DA539C /* ViewController.swift */; };
@@ -29,6 +31,7 @@
 		45A4B37D23BF129D00DA539C /* dept.json in Resources */ = {isa = PBXBuildFile; fileRef = 45A4B37C23BF129D00DA539C /* dept.json */; };
 		45A4B37F23BF13A200DA539C /* Depts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B37E23BF13A200DA539C /* Depts.swift */; };
 		45AA353723C713FE0090AA25 /* RxObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AA353623C713FE0090AA25 /* RxObserver.swift */; };
+		45ADDE0F23F4DBB600DDD49C /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ADDE0E23F4DBB600DDD49C /* TestViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +42,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				45A4B37823BF0BE400DA539C /* RxCocoa.framework in Embed Frameworks */,
+				4564960823FD21AB00C6914A /* RxBiBinding.framework in Embed Frameworks */,
 				45A4B37623BF0BE400DA539C /* RxSwift.framework in Embed Frameworks */,
 				45A4B37A23BF0BE400DA539C /* RxRelay.framework in Embed Frameworks */,
 			);
@@ -55,6 +59,7 @@
 		4518091C23C874BA004AA7F5 /* RxObservalObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObservalObserver.swift; sourceTree = "<group>"; };
 		454E1E1723E93E7000986F3D /* RxErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxErrorHandler.swift; sourceTree = "<group>"; };
 		454E1E1A23E9583900986F3D /* RxCreateObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCreateObservable.swift; sourceTree = "<group>"; };
+		4564960623FD21AB00C6914A /* RxBiBinding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBiBinding.framework; path = Carthage/Build/iOS/RxBiBinding.framework; sourceTree = "<group>"; };
 		45A4B35A23BF099D00DA539C /* RxSwift-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A4B35D23BF099D00DA539C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A4B35F23BF099D00DA539C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 		45A4B37C23BF129D00DA539C /* dept.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dept.json; sourceTree = "<group>"; };
 		45A4B37E23BF13A200DA539C /* Depts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Depts.swift; sourceTree = "<group>"; };
 		45AA353623C713FE0090AA25 /* RxObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObserver.swift; sourceTree = "<group>"; };
+		45ADDE0E23F4DBB600DDD49C /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A4B37723BF0BE400DA539C /* RxCocoa.framework in Frameworks */,
+				4564960723FD21AB00C6914A /* RxBiBinding.framework in Frameworks */,
 				45A4B37523BF0BE400DA539C /* RxSwift.framework in Frameworks */,
 				45A4B37923BF0BE400DA539C /* RxRelay.framework in Frameworks */,
 			);
@@ -120,6 +127,7 @@
 				45A4B35D23BF099D00DA539C /* AppDelegate.swift */,
 				45A4B35F23BF099D00DA539C /* SceneDelegate.swift */,
 				45A4B36123BF099D00DA539C /* ViewController.swift */,
+				45ADDE0E23F4DBB600DDD49C /* TestViewModel.swift */,
 				45A4B36323BF099D00DA539C /* Main.storyboard */,
 				45A4B36623BF099F00DA539C /* Assets.xcassets */,
 				45A4B36823BF099F00DA539C /* LaunchScreen.storyboard */,
@@ -131,6 +139,7 @@
 		45A4B37123BF0BE400DA539C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4564960623FD21AB00C6914A /* RxBiBinding.framework */,
 				45A4B37323BF0BE400DA539C /* RxCocoa.framework */,
 				45A4B37423BF0BE400DA539C /* RxRelay.framework */,
 				45A4B37223BF0BE400DA539C /* RxSwift.framework */,
@@ -227,6 +236,7 @@
 			files = (
 				45157A5F23E81EB800612CB1 /* RxDisposebag.swift in Sources */,
 				45157A6123E8216D00612CB1 /* RxScheduler.swift in Sources */,
+				45ADDE0F23F4DBB600DDD49C /* TestViewModel.swift in Sources */,
 				45A4B36223BF099D00DA539C /* ViewController.swift in Sources */,
 				14445E9D23F44346002CC8E2 /* RxRelays.swift in Sources */,
 				45157A5D23E8107300612CB1 /* RxOperator.swift in Sources */,

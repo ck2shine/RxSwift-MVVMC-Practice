@@ -9,6 +9,21 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxBiBinding
+
+//infix operator <->
+//
+//
+//@discardableResult func <-><T>(property : ControlProperty<T>,variable : BehaviorRelay<T>) ->Disposable{
+//    let variableToProperty = variable.asObservable()
+//        .bind(to: property)
+//
+//    let propertyToVariable = property.subscribe(
+//        onNext: { variable.accept($0)},onCompleted: {variableToProperty.dispose()})
+//    return Disposables.create(variableToProperty,propertyToVariable)
+//}
+//
+
 class ViewController: UIViewController {
     
 
@@ -55,46 +70,80 @@ class ViewController: UIViewController {
         //RxScheduler()
         //RxErrorHandler()
         //        RxCreateObservable()
-//        startToTest()
+        //        startToTest()
         //normalBinding()
-//        PublishRelays()
-//        share()
+        //        PublishRelays()
+        //        share()
         twoWayInputs()
     }
-    
-    var inputRelay = BehaviorRelay<String>(value: "")
-    
+    let viewModel = TestViewModel()
     
     func twoWayInputs(){
+
+
+//            .disposed(by: disposeBag)
+//        (InputTextField.rx.text <-> viewModel.nameField).disposed(by: disposeBag)
+//
+        //InputTextField.rx.text
+        //viewModel.setupBinding("shine")
+
+
+        let aa =  InputTextField.rx.controlProperty(editingEvents: [.editingChanged], getter: { (textField) -> String? in
+            return textField.text
+               }, setter: { (textField, value) in
+                    if textField.text != value {
+                          textField.text = value
+                      }
+               })
+        viewModel.publishNameField?.asObservable().bind(to: aa)
+        aa.bind(to: viewModel.publishNameField!).disposed(by: disposeBag)
+
+        viewModel.publishNameField?.asDriver(onErrorJustReturn: "no str").drive(self.InputValidLabel.rx.text).disposed(by: disposeBag)
+
+
+        viewModel.publishNameField?.accept("shineccc")
+
+
+       // let cc =  InputTextField.rx.controlEvent([.editingChanged])
+//        let kk = InputTextField.rx.text
+//        ( aa <-> viewModel.nameField!).disposed(by: disposeBag)
+//        viewModel.nameField?.asDriver().drive(self.InputValidLabel.rx.text).disposed(by: disposeBag)
+//        DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+//            self.viewModel.nameField.accept("54444")
+//        }
+
+     //   viewModel.nameField.accept("testing")
+
+//        viewModel.nameField.onNext("cccc")
         //from viewmodel to ui
-             
-    
-        InputTextField.rx.text.filter({ (str) -> Bool in
-            print("see str \(str!)")
-            return !(str?.isEmpty ?? true)
-        }).subscribe(onNext: { (str) in
-            print("CCcc")
-            }).disposed(by: disposeBag)
-        
-        inputRelay.asObservable()
-                               .bind(to: InputTextField.rx.text)
-                           .disposed(by: disposeBag)
-      
-        inputRelay.accept("Shineccc")
-       
+
+
+        //        InputTextField.rx.text.filter({ (str) -> Bool in
+        //            print("see str \(str!)")
+        //            return !(str?.isEmpty ?? true)
+        //        }).subscribe(onNext: { (str) in
+        //            print("CCcc")
+        //            }).disposed(by: disposeBag)
+        //
+        //        inputRelay.asObservable()
+        //                               .bind(to: InputTextField.rx.text)
+        //                           .disposed(by: disposeBag)
+        //
+        //        inputRelay.accept("Shineccc")
+
         
         //input
         
         
-//        InputTextField.rx.text.orEmpty.bind(to: inputRelay).disposed(by: disposeBag)
-                      
-      
-//        inputRelay.accept("Shine")
+        //        InputTextField.rx.text.orEmpty.bind(to: inputRelay).disposed(by: disposeBag)
+
+
+        //        inputRelay.accept("Shine")
         
         //load data
-//        inputRelay.accept("Shine")
+        //        inputRelay.accept("Shine")
     }
-    
+
     func normalBinding(){
         
         //error
@@ -127,10 +176,10 @@ class ViewController: UIViewController {
     
     func startToTest(){
         
-         rx.sentMessage(#selector(viewDidAppear(_:)))
-             .map{_ in ()}
-             .bind(to: triggerFetchData)
-             .disposed(by: disposeBag)
+        rx.sentMessage(#selector(viewDidAppear(_:)))
+            .map{_ in ()}
+            .bind(to: triggerFetchData)
+            .disposed(by: disposeBag)
         
         //fetch data
         let fetchTask = triggerFetchData.flatMapLatest { _ -> Observable<[String]> in
@@ -147,20 +196,20 @@ class ViewController: UIViewController {
         
         //write item and reload table
         items.filter{!$0.isEmpty}
-              .flatMapLatest{item in
-                  return Observable<Bool>.create({ event  in
-                      event.onNext(false)
-                      print("write in item :\(item)")
-                      DispatchQueue.global().asyncAfter(deadline: .now()+5) {
-                           event.onNext(true)
-                           event.onCompleted()
-                      }
+            .flatMapLatest{item in
+                return Observable<Bool>.create({ event  in
+                    event.onNext(false)
+                    print("write in item :\(item)")
+                    DispatchQueue.global().asyncAfter(deadline: .now()+5) {
+                        event.onNext(true)
+                        event.onCompleted()
+                    }
 
-                      return Disposables.create()
-                  })
-          }
-              .bind(to: syncData)
-              .disposed(by: disposeBag)
+                    return Disposables.create()
+                })
+        }
+        .bind(to: syncData)
+        .disposed(by: disposeBag)
         
         //subscribe trigger fetch data
         fetchTask.bind(to: items)
@@ -181,7 +230,7 @@ class ViewController: UIViewController {
             return false},  items.map{_ in
                 print("hey hey hey")
                 return true}
-            .asObservable()
+                .asObservable()
         )
             .bind(to: loading)
             .disposed(by: disposeBag)
@@ -200,12 +249,12 @@ class ViewController: UIViewController {
         
     }
     @IBAction func clearAction(_ sender: Any) {
-//        print(inputRelay.value)
-//        self.disposeBag = DisposeBag()
+        //        print(inputRelay.value)
+        //        self.disposeBag = DisposeBag()
     }
     
     @IBAction func eventAction(_ sender: Any) {
-//        triggerFetchData.onNext(())
+        //        triggerFetchData.onNext(())
         items.accept(["123"])
         //        scheduleObservable?
         //            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
